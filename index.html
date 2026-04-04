@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iman Seejae Turns 1 - Batman Birthday Celebration</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #d4a847;
+      --gold-light: #f0d68a;
+      --gold-dark: #b8922e;
+      --gold-glow: rgba(212, 168, 71, 0.3);
+      --black: #0a0a0a;
+      --black-soft: #111111;
+      --black-card: #141414;
+      --black-surface: #1a1a1a;
+      --gray-dark: #2a2a2a;
+      --gray-mid: #3a3a3a;
+      --white-text: #f5f0e8;
+      --white-muted: rgba(245, 240, 232, 0.6);
+      --font-display: 'Cinzel Decorative', 'Georgia', serif;
+      --font-heading: 'Cinzel', 'Georgia', serif;
+      --font-body: 'Cormorant Garamond', 'Georgia', serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      color: var(--white-text);
+      background-color: var(--black);
+      overflow-x: hidden;
+    }
+
+    /* ===== ANIMATED BACKGROUND ===== */
+    .bg-pattern {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bg-pattern svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.06;
+    }
+
+    /* Floating particles */
+    .particles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: float-particle linear infinite;
+      opacity: 0;
+    }
+
+    @keyframes float-particle {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+
+    /* ===== MAIN CONTAINER ===== */
+    .invitation {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 20px;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== CARD ===== */
+    .card {
+      width: 100%;
+      background: var(--black-card);
+      border: 1px solid rgba(212, 168, 71, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(212, 168, 71, 0.15);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .card::after {
+      content: '';
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(212, 168, 71, 0.08);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Corner ornaments */
+    .corner-ornament {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      z-index: 2;
+    }
+
+    .corner-ornament svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .corner-tl { top: 12px; left: 12px; }
+    .corner-tr { top: 12px; right: 12px; transform: scaleX(-1); }
+    .corner-bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+    .corner-br { bottom: 12px; right: 12px; transform: scale(-1, -1); }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      padding: 50px 40px 30px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212, 168, 71, 0.08) 0%, transparent 60%);
+    }
+
+    /* Bat Signal beam from top */
+    .bat-signal-beam {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 200px;
+      background: radial-gradient(ellipse at 50% 0%, rgba(212, 168, 71, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      animation: signal-pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes signal-pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+
+    /* Bat Symbol */
+    .bat-symbol {
+      position: relative;
+      margin: 0 auto 24px;
+      width: 120px;
+      height: 70px;
+      animation: bat-float 6s ease-in-out infinite;
+    }
+
+    .bat-symbol svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 0 20px rgba(212, 168, 71, 0.4));
+    }
+
+    @keyframes bat-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .pre-title {
+      font-family: var(--font-heading);
+      font-size: clamp(0.7rem, 0.6rem + 0.5vw, 0.85rem);
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      opacity: 0;
+      animation: fadeUp 1s 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.1rem, 0.8rem + 1.5vw, 1.6rem);
+      font-weight: 700;
+      color: var(--gold-light);
+      letter-spacing: 0.08em;
+      line-height: 1.3;
+      margin-bottom: 6px;
+      text-shadow: 0 0 40px rgba(212, 168, 71, 0.3);
+      opacity: 0;
+      animation: fadeUp 1s 0.5s forwards;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-heading);
+      font-size: clamp(0.65rem, 0.55rem + 0.4vw, 0.8rem);
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--white-muted);
+      opacity: 0;
+      animation: fadeUp 1s 0.7s forwards;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 0 40px;
+      opacity: 0;
+      animation: fadeIn 1s 0.8s forwards;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .divider-icon {
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ===== NAME SECTION ===== */
+    .name-section {
+      text-align: center;
+      padding: 28px 40px;
+      position: relative;
+    }
+
+    .name-intro {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+      font-style: italic;
+      color: var(--white-muted);
+      margin-bottom: 12px;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 1s 1s forwards;
+    }
+
+    .baby-name {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 40%, var(--gold-dark) 70%, var(--gold-light) 100%);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 4s ease-in-out infinite, fadeUp 1s 1.2s forwards;
+      opacity: 0;
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      text-shadow: none;
+      filter: drop-shadow(0 2px 10px rgba(212, 168, 71, 0.3));
+    }
+
+    @keyframes shimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .age-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 16px;
+      opacity: 0;
+      animation: scaleIn 0.8s 1.4s forwards;
+    }
+
+    .age-badge-inner {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .age-badge-inner svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .age-number {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--gold-light);
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .age-text {
+      font-family: var(--font-heading);
+      font-size: 0.5rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+      margin-top: 2px;
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.5); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ===== GOTHAM SKYLINE ===== */
+    .skyline-section {
+      position: relative;
+      width: 100%;
+      height: 100px;
+      overflow: hidden;
+    }
+
+    .skyline-section svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+
+    /* ===== DETAILS SECTION ===== */
+    .details {
+      padding: 30px 40px;
+      background: linear-gradient(180deg, var(--black-surface) 0%, var(--black-card) 100%);
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .detail-item {
+      text-align: center;
+      opacity: 0;
+      animation: fadeUp 0.8s forwards;
+    }
+
+    .detail-item:nth-child(1) { animation-delay: 1.6s; }
+    .detail-item:nth-child(2) { animation-delay: 1.7s; }
+    .detail-item:nth-child(3) { animation-delay: 1.8s; }
+    .detail-item:nth-child(4) { animation-delay: 1.9s; }
+
+    .detail-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      margin: 0 auto 10px;
+      border: 1px solid rgba(212, 168, 71, 0.3);
+      border-radius: 50%;
+      color: var(--gold);
+    }
+
+    .detail-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .detail-label {
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .detail-value {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+      color: var(--white-text);
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .detail-value-small {
+      font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.95rem);
+      color: var(--white-muted);
+      font-weight: 400;
+    }
+
+    /* Full width detail */
+    .detail-full {
+      grid-column: 1 / -1;
+    }
+
+    /* ===== DIVIDER SMALL ===== */
+    .divider-sm {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 6px 40px;
+      background: var(--black-card);
+    }
+
+    .divider-sm .divider-line {
+      height: 1px;
+    }
+
+    .divider-sm .divider-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    /* ===== ATTIRE SECTION ===== */
+    .attire-section {
+      padding: 28px 40px;
+      text-align: center;
+      background: var(--black-card);
+      opacity: 0;
+      animation: fadeUp 0.8s 2s forwards;
+    }
+
+    .attire-label {
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .attire-value {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+      color: var(--white-text);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .attire-hint {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+      color: var(--white-muted);
+      margin-top: 6px;
+      font-weight: 300;
+    }
+
+    /* ===== HOSTS ===== */
+    .hosts-section {
+      padding: 28px 40px 40px;
+      text-align: center;
+      background: var(--black-card);
+      opacity: 0;
+      animation: fadeUp 0.8s 2.2s forwards;
+    }
+
+    .hosts-label {
+      font-family: var(--font-heading);
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hosts-names {
+      font-family: var(--font-heading);
+      font-size: clamp(1rem, 0.85rem + 0.6vw, 1.35rem);
+      color: var(--gold-light);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER BAT ===== */
+    .footer-bat {
+      padding: 24px 40px 30px;
+      text-align: center;
+      background: var(--black-card);
+      opacity: 0;
+      animation: fadeUp 0.8s 2.4s forwards;
+    }
+
+    .footer-bat svg {
+      width: 40px;
+      height: 24px;
+      margin: 0 auto;
+      color: var(--gold);
+      opacity: 0.4;
+    }
+
+    .footer-tagline {
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      color: var(--white-muted);
+      margin-top: 10px;
+      font-style: italic;
+      font-weight: 300;
+      opacity: 0.6;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 480px) {
+      .invitation {
+        padding: 12px;
+      }
+
+      .hero {
+        padding: 40px 24px 24px;
+      }
+
+      .details {
+        padding: 24px 24px;
+      }
+
+      .detail-grid {
+        gap: 20px;
+      }
+
+      .name-section {
+        padding: 20px 24px;
+      }
+
+      .attire-section,
+      .hosts-section {
+        padding: 20px 24px;
+      }
+
+      .hosts-section {
+        padding-bottom: 30px;
+      }
+
+      .corner-ornament {
+        width: 40px;
+        height: 40px;
+      }
+
+      .corner-tl { top: 6px; left: 6px; }
+      .corner-tr { top: 6px; right: 6px; }
+      .corner-bl { bottom: 6px; left: 6px; }
+      .corner-br { bottom: 6px; right: 6px; }
+
+      .bat-symbol {
+        width: 90px;
+        height: 54px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background diamond pattern -->
+  <div class="bg-pattern">
+    <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <pattern id="diamonds" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="rgb(212,168,71)" stroke-width="0.3"/>
+        </pattern>
+      </defs>
+      <rect width="100" height="100" fill="url(#diamonds)"/>
+    </svg>
+  </div>
+
+  <!-- Floating gold particles -->
+  <div class="particles" id="particles"></div>
+
+  <div class="invitation">
+    <div class="card">
+
+      <!-- Corner ornaments -->
+      <div class="corner-ornament corner-tl">
+        <svg viewBox="0 0 60 60" fill="none">
+          <path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="corner-ornament corner-tr">
+        <svg viewBox="0 0 60 60" fill="none">
+          <path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="corner-ornament corner-bl">
+        <svg viewBox="0 0 60 60" fill="none">
+          <path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/>
+        </svg>
+      </div>
+      <div class="corner-ornament corner-br">
+        <svg viewBox="0 0 60 60" fill="none">
+          <path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/>
+          <path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/>
+          <circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/>
+        </svg>
+      </div>
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="bat-signal-beam"></div>
+
+        <!-- Bat Symbol -->
+        <div class="bat-symbol">
+          <svg viewBox="0 0 200 120" fill="rgb(212,168,71)">
+            <path d="M100 10 C100 10 85 35 60 45 C45 50 20 48 5 60 C15 55 30 55 40 58 C30 65 20 80 15 95 C25 80 40 70 55 68 C65 75 80 90 100 110 C120 90 135 75 145 68 C160 70 175 80 185 95 C180 80 170 65 160 58 C170 55 185 55 195 60 C180 48 155 50 140 45 C115 35 100 10 100 10Z"/>
+          </svg>
+        </div>
+
+        <p class="pre-title">You are cordially invited to</p>
+        <h1 class="hero-title">A Dark Knight's<br>First Birthday</h1>
+        <p class="hero-subtitle">A Celebration Fit for Gotham</p>
+      </section>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span class="divider-line"></span>
+        <span class="divider-icon">
+          <svg width="16" height="10" viewBox="0 0 200 120" fill="currentColor">
+            <path d="M100 10 C100 10 85 35 60 45 C45 50 20 48 5 60 C15 55 30 55 40 58 C30 65 20 80 15 95 C25 80 40 70 55 68 C65 75 80 90 100 110 C120 90 135 75 145 68 C160 70 175 80 185 95 C180 80 170 65 160 58 C170 55 185 55 195 60 C180 48 155 50 140 45 C115 35 100 10 100 10Z"/>
+          </svg>
+        </span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Baby Name -->
+      <section class="name-section">
+        <p class="name-intro">Celebrating the little hero</p>
+        <h2 class="baby-name">Iman Seejae</h2>
+        <div class="age-badge">
+          <div class="age-badge-inner">
+            <svg viewBox="0 0 80 80" fill="none">
+              <circle cx="40" cy="40" r="36" stroke="rgb(212,168,71)" stroke-width="0.75" opacity="0.4"/>
+              <circle cx="40" cy="40" r="32" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.25"/>
+              <!-- Diamond accents on circle -->
+              <rect x="38" y="2" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 40, 4)"/>
+              <rect x="38" y="74" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 40, 76)"/>
+              <rect x="2" y="38" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 4, 40)"/>
+              <rect x="74" y="38" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 76, 40)"/>
+            </svg>
+            <span class="age-number">1</span>
+            <span class="age-text">year</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gotham Skyline -->
+      <div class="skyline-section">
+        <svg viewBox="0 0 680 100" preserveAspectRatio="xMidYMax slice" fill="var(--black-surface)">
+          <!-- Skyline buildings silhouette -->
+          <rect x="0" y="60" width="680" height="40" fill="var(--black-surface)"/>
+          <!-- Buildings -->
+          <rect x="20" y="40" width="30" height="60" rx="1"/>
+          <rect x="55" y="30" width="20" height="70" rx="1"/>
+          <rect x="80" y="48" width="35" height="52" rx="1"/>
+          <rect x="120" y="22" width="18" height="78" rx="1"/>
+          <rect x="142" y="38" width="25" height="62" rx="1"/>
+          <rect x="172" y="50" width="15" height="50" rx="1"/>
+          <!-- Wayne Tower (tall center) -->
+          <rect x="200" y="15" width="22" height="85" rx="1"/>
+          <rect x="206" y="5" width="10" height="10" rx="1"/>
+          <rect x="209" y="0" width="4" height="5"/>
+          <!-- More buildings -->
+          <rect x="230" y="42" width="28" height="58" rx="1"/>
+          <rect x="265" y="35" width="20" height="65" rx="1"/>
+          <rect x="290" y="50" width="35" height="50" rx="1"/>
+          <rect x="330" y="25" width="16" height="75" rx="1"/>
+          <rect x="350" y="40" width="30" height="60" rx="1"/>
+          <rect x="385" y="48" width="22" height="52" rx="1"/>
+          <rect x="412" y="30" width="18" height="70" rx="1"/>
+          <rect x="435" y="45" width="28" height="55" rx="1"/>
+          <!-- Another tall tower -->
+          <rect x="470" y="12" width="20" height="88" rx="1"/>
+          <rect x="475" y="4" width="10" height="8" rx="1"/>
+          <rect x="478" y="0" width="4" height="4"/>
+          <rect x="498" y="38" width="30" height="62" rx="1"/>
+          <rect x="535" y="50" width="20" height="50" rx="1"/>
+          <rect x="560" y="35" width="25" height="65" rx="1"/>
+          <rect x="592" y="45" width="18" height="55" rx="1"/>
+          <rect x="615" y="28" width="22" height="72" rx="1"/>
+          <rect x="642" y="42" width="38" height="58" rx="1"/>
+          <!-- Tiny windows (gold dots) -->
+          <rect x="125" y="30" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
+          <rect x="125" y="38" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
+          <rect x="131" y="34" width="2" height="2" fill="rgba(212,168,71,0.25)" rx="0.5"/>
+          <rect x="205" y="20" width="2" height="2" fill="rgba(212,168,71,0.4)" rx="0.5"/>
+          <rect x="211" y="24" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
+          <rect x="205" y="32" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
+          <rect x="475" y="18" width="2" height="2" fill="rgba(212,168,71,0.35)" rx="0.5"/>
+          <rect x="481" y="22" width="2" height="2" fill="rgba(212,168,71,0.25)" rx="0.5"/>
+          <rect x="475" y="30" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
+          <rect x="335" y="32" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
+          <rect x="335" y="40" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
+          <rect x="620" y="34" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
+          <rect x="626" y="38" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
+        </svg>
+      </div>
+
+      <!-- Event Details -->
+      <section class="details">
+        <div class="detail-grid">
+          <div class="detail-item">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="4" width="18" height="18" rx="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <p class="detail-label">Date</p>
+            <p class="detail-value">Saturday</p>
+            <p class="detail-value">May 9, 2026</p>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <p class="detail-label">Time</p>
+            <p class="detail-value">6:00 PM Onwards</p>
+            <p class="detail-value-small">Cake Cutting at 7:00 PM</p>
+          </div>
+
+          <div class="detail-item detail-full">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <p class="detail-label">Venue</p>
+            <p class="detail-value">Accord Chrome</p>
+            <p class="detail-value-small">Chromepet, Chennai</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Small divider -->
+      <div class="divider-sm">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Attire -->
+      <section class="attire-section">
+        <p class="attire-label">Dress Code</p>
+        <p class="attire-value">Black &amp; Gold</p>
+        <p class="attire-hint">A touch of gold to honor the Dark Knight</p>
+      </section>
+
+      <!-- Small divider -->
+      <div class="divider-sm">
+        <span class="divider-line"></span>
+        <span class="divider-diamond"></span>
+        <span class="divider-line"></span>
+      </div>
+
+      <!-- Hosts -->
+      <section class="hosts-section">
+        <p class="hosts-label">With love from</p>
+        <p class="hosts-names">Jalin, Chanduru, Hana<br>&amp; Families</p>
+      </section>
+
+      <!-- Footer bat -->
+      <div class="footer-bat">
+        <svg viewBox="0 0 200 120" fill="currentColor">
+          <path d="M100 10 C100 10 85 35 60 45 C45 50 20 48 5 60 C15 55 30 55 40 58 C30 65 20 80 15 95 C25 80 40 70 55 68 C65 75 80 90 100 110 C120 90 135 75 145 68 C160 70 175 80 185 95 C180 80 170 65 160 58 C170 55 185 55 195 60 C180 48 155 50 140 45 C115 35 100 10 100 10Z"/>
+        </svg>
+        <p class="footer-tagline">Gotham needs its newest hero</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Create floating gold particles
+    (function() {
+      const container = document.getElementById('particles');
+      const count = 25;
+      for (let i = 0; i < count; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (8 + Math.random() * 12) + 's';
+        p.style.animationDelay = (Math.random() * 10) + 's';
+        p.style.width = (2 + Math.random() * 3) + 'px';
+        p.style.height = p.style.width;
+        container.appendChild(p);
+      }
+    })();
+  </script>
+
+</body>
+</html>
