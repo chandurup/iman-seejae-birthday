@@ -3,7 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iman Seejae Turns 1 - Batman Birthday Celebration</title>
+  <title>Iman Seejae Turns 1 - Birthday Celebration</title>
+
+  <!-- Open Graph / WhatsApp / Telegram preview -->
+  <meta property="og:title" content="You're Invited! Iman Seejae's 1st Birthday Celebration 🦇">
+  <meta property="og:description" content="Join us for a Batman-themed birthday bash on May 9, 2026 at Accord Chrome, Chromepet. Cake cutting at 7 PM. Dress code: Black & Gold.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="You're Invited! Iman Seejae's 1st Birthday Celebration 🦇">
+  <meta name="twitter:description" content="Batman-themed birthday bash on May 9, 2026 at Accord Chrome, Chromepet. Dress code: Black & Gold.">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -174,15 +187,15 @@
     .bat-symbol {
       position: relative;
       margin: 0 auto 24px;
-      width: 120px;
-      height: 70px;
+      width: 140px;
+      height: 80px;
       animation: bat-float 6s ease-in-out infinite;
     }
 
     .bat-symbol svg {
       width: 100%;
       height: 100%;
-      filter: drop-shadow(0 0 20px rgba(212, 168, 71, 0.4));
+      filter: drop-shadow(0 0 20px rgba(212, 168, 71, 0.4)) drop-shadow(0 0 40px rgba(212, 168, 71, 0.15));
     }
 
     @keyframes bat-float {
@@ -244,6 +257,12 @@
     .divider-icon {
       color: var(--gold);
       flex-shrink: 0;
+    }
+
+    /* Mini bat for divider */
+    .divider-icon svg {
+      width: 20px;
+      height: 12px;
     }
 
     /* ===== NAME SECTION ===== */
@@ -338,12 +357,13 @@
       to { opacity: 1; transform: scale(1); }
     }
 
-    /* ===== GOTHAM SKYLINE ===== */
+    /* ===== SKYLINE WITH STARS ===== */
     .skyline-section {
       position: relative;
       width: 100%;
-      height: 100px;
+      height: 120px;
       overflow: hidden;
+      background: linear-gradient(180deg, var(--black-card) 0%, var(--black-surface) 100%);
     }
 
     .skyline-section svg {
@@ -351,6 +371,32 @@
       height: 100%;
       position: absolute;
       bottom: 0;
+    }
+
+    /* Twinkling stars */
+    .star {
+      animation: twinkle ease-in-out infinite alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.1; }
+      50% { opacity: 0.9; }
+      100% { opacity: 0.2; }
+    }
+
+    /* Flickering building lights */
+    .bldg-light {
+      animation: flicker ease-in-out infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { opacity: 0.7; }
+      15% { opacity: 0.3; }
+      30% { opacity: 0.8; }
+      45% { opacity: 0.1; }
+      60% { opacity: 0.6; }
+      75% { opacity: 0.9; }
+      90% { opacity: 0.4; }
     }
 
     /* ===== DETAILS SECTION ===== */
@@ -514,10 +560,9 @@
     }
 
     .footer-bat svg {
-      width: 40px;
-      height: 24px;
+      width: 36px;
+      height: 20px;
       margin: 0 auto;
-      color: var(--gold);
       opacity: 0.4;
     }
 
@@ -584,8 +629,8 @@
       .corner-br { bottom: 6px; right: 6px; }
 
       .bat-symbol {
-        width: 90px;
-        height: 54px;
+        width: 110px;
+        height: 64px;
       }
     }
 
@@ -656,24 +701,91 @@
       <section class="hero">
         <div class="bat-signal-beam"></div>
 
-        <!-- Bat Symbol -->
+        <!-- Iconic Batman Bat Symbol - classic spread wings with scalloped edges -->
         <div class="bat-symbol">
-          <svg viewBox="0 0 200 120" fill="rgb(212,168,71)">
-            <path d="M100 10 C100 10 85 35 60 45 C45 50 20 48 5 60 C15 55 30 55 40 58 C30 65 20 80 15 95 C25 80 40 70 55 68 C65 75 80 90 100 110 C120 90 135 75 145 68 C160 70 175 80 185 95 C180 80 170 65 160 58 C170 55 185 55 195 60 C180 48 155 50 140 45 C115 35 100 10 100 10Z"/>
+          <svg viewBox="0 0 512 300" fill="rgb(212,168,71)">
+            <!-- Classic Batman bat: wide wings, pointed ears, scalloped wing bottoms -->
+            <path d="
+              M256 16
+              C256 16, 248 42, 240 56
+              L226 40
+              C226 40, 232 72, 228 96
+              C210 72, 160 44, 100 36
+              C72 32, 30 48, 4 80
+              C28 68, 52 62, 72 66
+              C48 84, 24 112, 12 148
+              C36 128, 60 116, 80 118
+              C56 140, 36 172, 28 200
+              C52 180, 76 164, 100 162
+              C88 182, 80 210, 78 240
+              C102 216, 120 196, 140 188
+              C140 210, 152 244, 176 268
+              C190 248, 216 224, 232 200
+              C240 220, 250 248, 256 284
+              C262 248, 272 220, 280 200
+              C296 224, 322 248, 336 268
+              C360 244, 372 210, 372 188
+              C392 196, 410 216, 434 240
+              C432 210, 424 182, 412 162
+              C436 164, 460 180, 484 200
+              C476 172, 456 140, 432 118
+              C452 116, 476 128, 500 148
+              C488 112, 464 84, 440 66
+              C460 62, 484 68, 508 80
+              C482 48, 440 32, 412 36
+              C352 44, 302 72, 284 96
+              C280 72, 286 40, 286 40
+              L272 56
+              C264 42, 256 16, 256 16
+              Z
+            "/>
           </svg>
         </div>
 
         <p class="pre-title">You are cordially invited to</p>
-        <h1 class="hero-title">A Dark Knight's<br>First Birthday</h1>
-        <p class="hero-subtitle">A Celebration Fit for Gotham</p>
+        <h1 class="hero-title">A Little Hero's<br>First Birthday</h1>
+        <p class="hero-subtitle">A Celebration Worthy of a Superhero</p>
       </section>
 
-      <!-- Divider -->
+      <!-- Divider with mini bat -->
       <div class="divider">
         <span class="divider-line"></span>
         <span class="divider-icon">
-          <svg width="16" height="10" viewBox="0 0 200 120" fill="currentColor">
-            <path d="M100 10 C100 10 85 35 60 45 C45 50 20 48 5 60 C15 55 30 55 40 58 C30 65 20 80 15 95 C25 80 40 70 55 68 C65 75 80 90 100 110 C120 90 135 75 145 68 C160 70 175 80 185 95 C180 80 170 65 160 58 C170 55 185 55 195 60 C180 48 155 50 140 45 C115 35 100 10 100 10Z"/>
+          <svg viewBox="0 0 512 300" fill="currentColor">
+            <path d="
+              M256 16
+              C256 16, 248 42, 240 56
+              L226 40
+              C226 40, 232 72, 228 96
+              C210 72, 160 44, 100 36
+              C72 32, 30 48, 4 80
+              C28 68, 52 62, 72 66
+              C48 84, 24 112, 12 148
+              C36 128, 60 116, 80 118
+              C56 140, 36 172, 28 200
+              C52 180, 76 164, 100 162
+              C88 182, 80 210, 78 240
+              C102 216, 120 196, 140 188
+              C140 210, 152 244, 176 268
+              C190 248, 216 224, 232 200
+              C240 220, 250 248, 256 284
+              C262 248, 272 220, 280 200
+              C296 224, 322 248, 336 268
+              C360 244, 372 210, 372 188
+              C392 196, 410 216, 434 240
+              C432 210, 424 182, 412 162
+              C436 164, 460 180, 484 200
+              C476 172, 456 140, 432 118
+              C452 116, 476 128, 500 148
+              C488 112, 464 84, 440 66
+              C460 62, 484 68, 508 80
+              C482 48, 440 32, 412 36
+              C352 44, 302 72, 284 96
+              C280 72, 286 40, 286 40
+              L272 56
+              C264 42, 256 16, 256 16
+              Z
+            "/>
           </svg>
         </span>
         <span class="divider-line"></span>
@@ -681,14 +793,13 @@
 
       <!-- Baby Name -->
       <section class="name-section">
-        <p class="name-intro">Celebrating the little hero</p>
+        <p class="name-intro">Celebrating our little superhero</p>
         <h2 class="baby-name">Iman Seejae</h2>
         <div class="age-badge">
           <div class="age-badge-inner">
             <svg viewBox="0 0 80 80" fill="none">
               <circle cx="40" cy="40" r="36" stroke="rgb(212,168,71)" stroke-width="0.75" opacity="0.4"/>
               <circle cx="40" cy="40" r="32" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.25"/>
-              <!-- Diamond accents on circle -->
               <rect x="38" y="2" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 40, 4)"/>
               <rect x="38" y="74" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 40, 76)"/>
               <rect x="2" y="38" width="4" height="4" fill="rgb(212,168,71)" opacity="0.6" transform="rotate(45, 4, 40)"/>
@@ -700,55 +811,127 @@
         </div>
       </section>
 
-      <!-- Gotham Skyline -->
+      <!-- Skyline with twinkling stars and flickering lights -->
       <div class="skyline-section">
-        <svg viewBox="0 0 680 100" preserveAspectRatio="xMidYMax slice" fill="var(--black-surface)">
-          <!-- Skyline buildings silhouette -->
-          <rect x="0" y="60" width="680" height="40" fill="var(--black-surface)"/>
+        <svg viewBox="0 0 680 120" preserveAspectRatio="xMidYMax slice">
+          <!-- Stars twinkling in the sky -->
+          <circle class="star" cx="45" cy="12" r="1.2" fill="#f0d68a" style="animation-duration: 2.1s; animation-delay: 0.3s;"/>
+          <circle class="star" cx="110" cy="22" r="0.8" fill="#f0d68a" style="animation-duration: 3.2s; animation-delay: 1.1s;"/>
+          <circle class="star" cx="165" cy="8" r="1" fill="#f0d68a" style="animation-duration: 2.7s; animation-delay: 0.6s;"/>
+          <circle class="star" cx="230" cy="18" r="0.7" fill="#f0d68a" style="animation-duration: 1.9s; animation-delay: 2.2s;"/>
+          <circle class="star" cx="290" cy="6" r="1.3" fill="#f0d68a" style="animation-duration: 2.5s; animation-delay: 0.9s;"/>
+          <circle class="star" cx="340" cy="25" r="0.9" fill="#f0d68a" style="animation-duration: 3.5s; animation-delay: 1.5s;"/>
+          <circle class="star" cx="400" cy="10" r="1.1" fill="#f0d68a" style="animation-duration: 2.3s; animation-delay: 0.1s;"/>
+          <circle class="star" cx="460" cy="20" r="0.8" fill="#f0d68a" style="animation-duration: 2.8s; animation-delay: 1.8s;"/>
+          <circle class="star" cx="520" cy="5" r="1" fill="#f0d68a" style="animation-duration: 3.1s; animation-delay: 0.4s;"/>
+          <circle class="star" cx="575" cy="15" r="1.2" fill="#f0d68a" style="animation-duration: 2s; animation-delay: 2.5s;"/>
+          <circle class="star" cx="630" cy="8" r="0.7" fill="#f0d68a" style="animation-duration: 2.6s; animation-delay: 1.3s;"/>
+          <circle class="star" cx="80" cy="30" r="0.6" fill="#f0d68a" style="animation-duration: 3.8s; animation-delay: 0.7s;"/>
+          <circle class="star" cx="195" cy="32" r="0.9" fill="#f0d68a" style="animation-duration: 2.4s; animation-delay: 1.9s;"/>
+          <circle class="star" cx="370" cy="3" r="1" fill="#f0d68a" style="animation-duration: 3s; animation-delay: 0.5s;"/>
+          <circle class="star" cx="500" cy="28" r="0.7" fill="#f0d68a" style="animation-duration: 2.2s; animation-delay: 2.8s;"/>
+          <circle class="star" cx="660" cy="22" r="0.8" fill="#f0d68a" style="animation-duration: 3.3s; animation-delay: 1.6s;"/>
+          <circle class="star" cx="15" cy="20" r="0.9" fill="#f0d68a" style="animation-duration: 2.9s; animation-delay: 0.2s;"/>
+          <circle class="star" cx="255" cy="30" r="0.6" fill="#f0d68a" style="animation-duration: 3.6s; animation-delay: 2.1s;"/>
+
+          <!-- Ground fill -->
+          <rect x="0" y="80" width="680" height="40" fill="#1a1a1a"/>
+
           <!-- Buildings -->
-          <rect x="20" y="40" width="30" height="60" rx="1"/>
-          <rect x="55" y="30" width="20" height="70" rx="1"/>
-          <rect x="80" y="48" width="35" height="52" rx="1"/>
-          <rect x="120" y="22" width="18" height="78" rx="1"/>
-          <rect x="142" y="38" width="25" height="62" rx="1"/>
-          <rect x="172" y="50" width="15" height="50" rx="1"/>
-          <!-- Wayne Tower (tall center) -->
-          <rect x="200" y="15" width="22" height="85" rx="1"/>
-          <rect x="206" y="5" width="10" height="10" rx="1"/>
-          <rect x="209" y="0" width="4" height="5"/>
-          <!-- More buildings -->
-          <rect x="230" y="42" width="28" height="58" rx="1"/>
-          <rect x="265" y="35" width="20" height="65" rx="1"/>
-          <rect x="290" y="50" width="35" height="50" rx="1"/>
-          <rect x="330" y="25" width="16" height="75" rx="1"/>
-          <rect x="350" y="40" width="30" height="60" rx="1"/>
-          <rect x="385" y="48" width="22" height="52" rx="1"/>
-          <rect x="412" y="30" width="18" height="70" rx="1"/>
-          <rect x="435" y="45" width="28" height="55" rx="1"/>
+          <rect x="20" y="56" width="30" height="64" rx="1" fill="#1a1a1a"/>
+          <rect x="55" y="44" width="20" height="76" rx="1" fill="#1a1a1a"/>
+          <rect x="80" y="62" width="35" height="58" rx="1" fill="#1a1a1a"/>
+          <rect x="120" y="36" width="18" height="84" rx="1" fill="#1a1a1a"/>
+          <rect x="142" y="52" width="25" height="68" rx="1" fill="#1a1a1a"/>
+          <rect x="172" y="64" width="15" height="56" rx="1" fill="#1a1a1a"/>
+          <!-- Tall tower -->
+          <rect x="200" y="28" width="22" height="92" rx="1" fill="#1a1a1a"/>
+          <rect x="206" y="18" width="10" height="10" rx="1" fill="#1a1a1a"/>
+          <rect x="209" y="12" width="4" height="6" fill="#1a1a1a"/>
+          <rect x="230" y="56" width="28" height="64" rx="1" fill="#1a1a1a"/>
+          <rect x="265" y="48" width="20" height="72" rx="1" fill="#1a1a1a"/>
+          <rect x="290" y="64" width="35" height="56" rx="1" fill="#1a1a1a"/>
+          <rect x="330" y="38" width="16" height="82" rx="1" fill="#1a1a1a"/>
+          <rect x="350" y="54" width="30" height="66" rx="1" fill="#1a1a1a"/>
+          <rect x="385" y="62" width="22" height="58" rx="1" fill="#1a1a1a"/>
+          <rect x="412" y="44" width="18" height="76" rx="1" fill="#1a1a1a"/>
+          <rect x="435" y="58" width="28" height="62" rx="1" fill="#1a1a1a"/>
           <!-- Another tall tower -->
-          <rect x="470" y="12" width="20" height="88" rx="1"/>
-          <rect x="475" y="4" width="10" height="8" rx="1"/>
-          <rect x="478" y="0" width="4" height="4"/>
-          <rect x="498" y="38" width="30" height="62" rx="1"/>
-          <rect x="535" y="50" width="20" height="50" rx="1"/>
-          <rect x="560" y="35" width="25" height="65" rx="1"/>
-          <rect x="592" y="45" width="18" height="55" rx="1"/>
-          <rect x="615" y="28" width="22" height="72" rx="1"/>
-          <rect x="642" y="42" width="38" height="58" rx="1"/>
-          <!-- Tiny windows (gold dots) -->
-          <rect x="125" y="30" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
-          <rect x="125" y="38" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
-          <rect x="131" y="34" width="2" height="2" fill="rgba(212,168,71,0.25)" rx="0.5"/>
-          <rect x="205" y="20" width="2" height="2" fill="rgba(212,168,71,0.4)" rx="0.5"/>
-          <rect x="211" y="24" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
-          <rect x="205" y="32" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
-          <rect x="475" y="18" width="2" height="2" fill="rgba(212,168,71,0.35)" rx="0.5"/>
-          <rect x="481" y="22" width="2" height="2" fill="rgba(212,168,71,0.25)" rx="0.5"/>
-          <rect x="475" y="30" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
-          <rect x="335" y="32" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
-          <rect x="335" y="40" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
-          <rect x="620" y="34" width="2" height="2" fill="rgba(212,168,71,0.3)" rx="0.5"/>
-          <rect x="626" y="38" width="2" height="2" fill="rgba(212,168,71,0.2)" rx="0.5"/>
+          <rect x="470" y="24" width="20" height="96" rx="1" fill="#1a1a1a"/>
+          <rect x="475" y="16" width="10" height="8" rx="1" fill="#1a1a1a"/>
+          <rect x="478" y="10" width="4" height="6" fill="#1a1a1a"/>
+          <rect x="498" y="52" width="30" height="68" rx="1" fill="#1a1a1a"/>
+          <rect x="535" y="64" width="20" height="56" rx="1" fill="#1a1a1a"/>
+          <rect x="560" y="48" width="25" height="72" rx="1" fill="#1a1a1a"/>
+          <rect x="592" y="58" width="18" height="62" rx="1" fill="#1a1a1a"/>
+          <rect x="615" y="42" width="22" height="78" rx="1" fill="#1a1a1a"/>
+          <rect x="642" y="56" width="38" height="64" rx="1" fill="#1a1a1a"/>
+
+          <!-- Flickering building window lights -->
+          <rect class="bldg-light" x="27" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3.2s; animation-delay: 0.4s;"/>
+          <rect class="bldg-light" x="35" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.1s; animation-delay: 1.2s;"/>
+          <rect class="bldg-light" x="27" y="74" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5.5s; animation-delay: 2.6s;"/>
+
+          <rect class="bldg-light" x="60" y="50" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.8s; animation-delay: 0.7s;"/>
+          <rect class="bldg-light" x="66" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 4.5s; animation-delay: 2.1s;"/>
+          <rect class="bldg-light" x="60" y="66" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3.1s; animation-delay: 1.5s;"/>
+
+          <rect class="bldg-light" x="125" y="42" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.7)" style="animation-duration: 2.9s; animation-delay: 0.3s;"/>
+          <rect class="bldg-light" x="131" y="50" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 5.2s; animation-delay: 1.8s;"/>
+          <rect class="bldg-light" x="125" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 3.6s; animation-delay: 2.4s;"/>
+          <rect class="bldg-light" x="131" y="66" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 4.3s; animation-delay: 0.9s;"/>
+
+          <rect class="bldg-light" x="205" y="34" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.7)" style="animation-duration: 3.4s; animation-delay: 0.5s;"/>
+          <rect class="bldg-light" x="212" y="40" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.8s; animation-delay: 1.6s;"/>
+          <rect class="bldg-light" x="205" y="48" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 2.7s; animation-delay: 2.9s;"/>
+          <rect class="bldg-light" x="212" y="56" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5.1s; animation-delay: 0.2s;"/>
+
+          <rect class="bldg-light" x="335" y="44" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3.7s; animation-delay: 1.3s;"/>
+          <rect class="bldg-light" x="335" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 4.9s; animation-delay: 2.7s;"/>
+          <rect class="bldg-light" x="339" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.3s; animation-delay: 0.8s;"/>
+
+          <rect class="bldg-light" x="356" y="60" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.2s; animation-delay: 1.9s;"/>
+          <rect class="bldg-light" x="365" y="66" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5.3s; animation-delay: 0.6s;"/>
+          <rect class="bldg-light" x="356" y="72" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3s; animation-delay: 2.3s;"/>
+
+          <rect class="bldg-light" x="475" y="22" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.7)" style="animation-duration: 3.5s; animation-delay: 0.1s;"/>
+          <rect class="bldg-light" x="482" y="30" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.6s; animation-delay: 1.7s;"/>
+          <rect class="bldg-light" x="475" y="38" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5.4s; animation-delay: 2.5s;"/>
+          <rect class="bldg-light" x="482" y="46" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 2.8s; animation-delay: 0.4s;"/>
+
+          <rect class="bldg-light" x="505" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.9s; animation-delay: 2s;"/>
+          <rect class="bldg-light" x="515" y="64" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 4.4s; animation-delay: 1.1s;"/>
+
+          <rect class="bldg-light" x="620" y="48" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3.1s; animation-delay: 0.9s;"/>
+          <rect class="bldg-light" x="628" y="56" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5s; animation-delay: 2.2s;"/>
+          <rect class="bldg-light" x="620" y="64" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.7s; animation-delay: 1.4s;"/>
+
+          <rect class="bldg-light" x="650" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.4s; animation-delay: 0.6s;"/>
+          <rect class="bldg-light" x="660" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 4s; animation-delay: 2.8s;"/>
+          <rect class="bldg-light" x="670" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 5.2s; animation-delay: 1s;"/>
+
+          <rect class="bldg-light" x="88" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.6s; animation-delay: 1.7s;"/>
+          <rect class="bldg-light" x="100" y="72" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 4.2s; animation-delay: 0.3s;"/>
+
+          <rect class="bldg-light" x="148" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.8s; animation-delay: 2.4s;"/>
+          <rect class="bldg-light" x="156" y="66" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3.2s; animation-delay: 0.8s;"/>
+
+          <rect class="bldg-light" x="237" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5.1s; animation-delay: 1.5s;"/>
+          <rect class="bldg-light" x="248" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.8s; animation-delay: 2.6s;"/>
+
+          <rect class="bldg-light" x="270" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 4.3s; animation-delay: 0.5s;"/>
+          <rect class="bldg-light" x="277" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 3.5s; animation-delay: 1.9s;"/>
+
+          <rect class="bldg-light" x="416" y="50" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.6s; animation-delay: 2.1s;"/>
+          <rect class="bldg-light" x="422" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 3.3s; animation-delay: 0.7s;"/>
+
+          <rect class="bldg-light" x="440" y="64" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 5.5s; animation-delay: 1.3s;"/>
+          <rect class="bldg-light" x="452" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 3.7s; animation-delay: 2.7s;"/>
+
+          <rect class="bldg-light" x="566" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration: 4.1s; animation-delay: 0.2s;"/>
+          <rect class="bldg-light" x="576" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration: 3.4s; animation-delay: 2.3s;"/>
+
+          <rect class="bldg-light" x="597" y="64" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration: 4.9s; animation-delay: 1.6s;"/>
         </svg>
       </div>
 
@@ -806,7 +989,7 @@
       <section class="attire-section">
         <p class="attire-label">Dress Code</p>
         <p class="attire-value">Black &amp; Gold</p>
-        <p class="attire-hint">A touch of gold to honor the Dark Knight</p>
+        <p class="attire-hint">A touch of gold to match the superhero spirit</p>
       </section>
 
       <!-- Small divider -->
@@ -824,10 +1007,43 @@
 
       <!-- Footer bat -->
       <div class="footer-bat">
-        <svg viewBox="0 0 200 120" fill="currentColor">
-          <path d="M100 10 C100 10 85 35 60 45 C45 50 20 48 5 60 C15 55 30 55 40 58 C30 65 20 80 15 95 C25 80 40 70 55 68 C65 75 80 90 100 110 C120 90 135 75 145 68 C160 70 175 80 185 95 C180 80 170 65 160 58 C170 55 185 55 195 60 C180 48 155 50 140 45 C115 35 100 10 100 10Z"/>
+        <svg viewBox="0 0 512 300" fill="rgb(212,168,71)">
+          <path d="
+            M256 16
+            C256 16, 248 42, 240 56
+            L226 40
+            C226 40, 232 72, 228 96
+            C210 72, 160 44, 100 36
+            C72 32, 30 48, 4 80
+            C28 68, 52 62, 72 66
+            C48 84, 24 112, 12 148
+            C36 128, 60 116, 80 118
+            C56 140, 36 172, 28 200
+            C52 180, 76 164, 100 162
+            C88 182, 80 210, 78 240
+            C102 216, 120 196, 140 188
+            C140 210, 152 244, 176 268
+            C190 248, 216 224, 232 200
+            C240 220, 250 248, 256 284
+            C262 248, 272 220, 280 200
+            C296 224, 322 248, 336 268
+            C360 244, 372 210, 372 188
+            C392 196, 410 216, 434 240
+            C432 210, 424 182, 412 162
+            C436 164, 460 180, 484 200
+            C476 172, 456 140, 432 118
+            C452 116, 476 128, 500 148
+            C488 112, 464 84, 440 66
+            C460 62, 484 68, 508 80
+            C482 48, 440 32, 412 36
+            C352 44, 302 72, 284 96
+            C280 72, 286 40, 286 40
+            L272 56
+            C264 42, 256 16, 256 16
+            Z
+          "/>
         </svg>
-        <p class="footer-tagline">Gotham needs its newest hero</p>
+        <p class="footer-tagline">Every hero's journey begins with a first step</p>
       </div>
 
     </div>
