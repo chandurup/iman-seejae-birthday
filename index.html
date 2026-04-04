@@ -12,8 +12,6 @@
   <meta property="og:image" content="og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="You're Invited! Iman Seejae's 1st Birthday 🦇">
   <meta name="twitter:description" content="Batman-themed birthday bash on May 9, 2026 at Accord Chrome, Chromepet. Dress code: Black & Gold.">
@@ -40,11 +38,7 @@
       --font-body: 'Cormorant Garamond', 'Georgia', serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
     body {
       min-height: 100dvh;
@@ -56,85 +50,43 @@
 
     /* ===== BACKGROUND ===== */
     .bg-pattern {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
+      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
     }
-
     .bg-pattern svg { width: 100%; height: 100%; opacity: 0.06; }
 
-    .particles {
-      position: fixed;
-      inset: 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
+    .particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
     .particle {
-      position: absolute;
-      width: 3px;
-      height: 3px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: float-particle linear infinite;
-      opacity: 0;
+      position: absolute; width: 3px; height: 3px; background: var(--gold); border-radius: 50%;
+      animation: float-particle linear infinite; opacity: 0;
     }
-
     @keyframes float-particle {
       0% { transform: translateY(100vh) scale(0); opacity: 0; }
-      10% { opacity: 0.8; }
-      90% { opacity: 0.3; }
+      10% { opacity: 0.8; } 90% { opacity: 0.3; }
       100% { transform: translateY(-10vh) scale(1); opacity: 0; }
     }
 
     /* ===== MAIN ===== */
     .invitation {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 20px;
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      position: relative; z-index: 1; max-width: 680px; margin: 0 auto; padding: 20px;
+      min-height: 100dvh; display: flex; flex-direction: column; align-items: center;
     }
 
     .card {
-      width: 100%;
-      background: var(--black-card);
+      width: 100%; background: var(--black-card);
       border: 1px solid rgba(212, 168, 71, 0.25);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
-
     .card::before {
-      content: '';
-      position: absolute;
-      inset: 8px;
-      border: 1px solid rgba(212, 168, 71, 0.15);
-      pointer-events: none;
-      z-index: 1;
+      content: ''; position: absolute; inset: 8px;
+      border: 1px solid rgba(212, 168, 71, 0.15); pointer-events: none; z-index: 1;
     }
-
     .card::after {
-      content: '';
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(212, 168, 71, 0.08);
-      pointer-events: none;
-      z-index: 1;
+      content: ''; position: absolute; inset: 14px;
+      border: 1px solid rgba(212, 168, 71, 0.08); pointer-events: none; z-index: 1;
     }
 
     /* Corners */
-    .corner-ornament {
-      position: absolute;
-      width: 60px;
-      height: 60px;
-      z-index: 2;
-    }
+    .corner-ornament { position: absolute; width: 60px; height: 60px; z-index: 2; }
     .corner-ornament svg { width: 100%; height: 100%; }
     .corner-tl { top: 12px; left: 12px; }
     .corner-tr { top: 12px; right: 12px; transform: scaleX(-1); }
@@ -143,296 +95,252 @@
 
     /* ===== HERO ===== */
     .hero {
-      position: relative;
-      padding: 50px 40px 30px;
-      text-align: center;
+      position: relative; padding: 50px 40px 30px; text-align: center;
       background: radial-gradient(ellipse at 50% 0%, rgba(212, 168, 71, 0.08) 0%, transparent 60%);
     }
 
-    .bat-signal-beam {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      height: 200px;
+    .bat-signal-beam-top {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 300px; height: 200px;
       background: radial-gradient(ellipse at 50% 0%, rgba(212, 168, 71, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-      animation: signal-pulse 4s ease-in-out infinite;
+      pointer-events: none; animation: signal-pulse 4s ease-in-out infinite;
     }
+    @keyframes signal-pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
 
-    @keyframes signal-pulse {
-      0%, 100% { opacity: 0.6; }
-      50% { opacity: 1; }
-    }
-
-    /* Batman logo */
+    /* Exact bat logo from traced image */
     .bat-logo {
-      position: relative;
-      margin: 0 auto 24px;
-      width: 150px;
-      height: 60px;
+      position: relative; margin: 0 auto 24px; width: 160px; height: 60px;
       animation: bat-float 6s ease-in-out infinite;
     }
-
     .bat-logo svg {
-      width: 100%;
-      height: 100%;
-      filter: drop-shadow(0 0 20px rgba(212, 168, 71, 0.4)) drop-shadow(0 0 40px rgba(212, 168, 71, 0.15));
+      width: 100%; height: 100%;
+      filter: drop-shadow(0 0 15px rgba(212, 168, 71, 0.5)) drop-shadow(0 0 30px rgba(212, 168, 71, 0.2));
     }
-
-    @keyframes bat-float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-6px); }
-    }
+    @keyframes bat-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
     .pre-title {
-      font-family: var(--font-heading);
-      font-size: clamp(0.7rem, 0.6rem + 0.5vw, 0.85rem);
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 8px;
-      opacity: 0;
-      animation: fadeUp 1s 0.3s forwards;
+      font-family: var(--font-heading); font-size: clamp(0.7rem, 0.6rem + 0.5vw, 0.85rem);
+      letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold);
+      margin-bottom: 8px; opacity: 0; animation: fadeUp 1s 0.3s forwards;
     }
-
     .hero-title {
-      font-family: var(--font-display);
-      font-size: clamp(1.1rem, 0.8rem + 1.5vw, 1.6rem);
-      font-weight: 700;
-      color: var(--gold-light);
-      letter-spacing: 0.08em;
-      line-height: 1.3;
-      margin-bottom: 6px;
-      text-shadow: 0 0 40px rgba(212, 168, 71, 0.3);
-      opacity: 0;
-      animation: fadeUp 1s 0.5s forwards;
+      font-family: var(--font-display); font-size: clamp(1.1rem, 0.8rem + 1.5vw, 1.6rem);
+      font-weight: 700; color: var(--gold-light); letter-spacing: 0.08em; line-height: 1.3;
+      margin-bottom: 6px; text-shadow: 0 0 40px rgba(212, 168, 71, 0.3);
+      opacity: 0; animation: fadeUp 1s 0.5s forwards;
     }
-
     .hero-subtitle {
-      font-family: var(--font-heading);
-      font-size: clamp(0.65rem, 0.55rem + 0.4vw, 0.8rem);
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--white-muted);
-      opacity: 0;
-      animation: fadeUp 1s 0.7s forwards;
+      font-family: var(--font-heading); font-size: clamp(0.65rem, 0.55rem + 0.4vw, 0.8rem);
+      letter-spacing: 0.3em; text-transform: uppercase; color: var(--white-muted);
+      opacity: 0; animation: fadeUp 1s 0.7s forwards;
     }
 
-    /* ===== DIVIDER ===== */
+    /* ===== ANIMATED GOLD DIVIDER ===== */
     .divider {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      padding: 0 40px;
-      opacity: 0;
-      animation: fadeIn 1s 0.8s forwards;
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 0 40px; opacity: 0; animation: fadeIn 1s 0.8s forwards;
+    }
+    .divider-line-animated {
+      flex: 1; height: 1px; position: relative; overflow: hidden;
+      background: linear-gradient(90deg, transparent, rgba(212, 168, 71, 0.25), transparent);
+    }
+    .divider-line-animated::after {
+      content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
+      animation: gold-run 3s ease-in-out infinite;
+    }
+    @keyframes gold-run {
+      0% { left: -60%; }
+      100% { left: 100%; }
     }
 
-    .divider-line {
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .divider-icon {
-      color: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .divider-icon svg { width: 22px; height: 9px; }
+    .divider-icon { color: var(--gold); flex-shrink: 0; }
+    .divider-icon svg { width: 22px; height: 8px; }
 
     /* ===== NAME ===== */
     .name-section {
-      text-align: center;
-      padding: 28px 40px 16px;
-      position: relative;
+      text-align: center; padding: 28px 40px 16px; position: relative;
     }
-
     .name-intro {
-      font-family: var(--font-body);
-      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
-      font-style: italic;
-      color: var(--white-muted);
-      margin-bottom: 12px;
-      font-weight: 300;
-      opacity: 0;
-      animation: fadeUp 1s 1s forwards;
+      font-family: var(--font-body); font-size: clamp(1rem, 0.9rem + 0.5vw, 1.25rem);
+      font-style: italic; color: var(--white-muted); margin-bottom: 12px; font-weight: 300;
+      opacity: 0; animation: fadeUp 1s 1s forwards;
     }
-
     .baby-name {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem);
-      font-weight: 900;
+      font-family: var(--font-display); font-size: clamp(2rem, 1.4rem + 3vw, 3.5rem); font-weight: 900;
       background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 40%, var(--gold-dark) 70%, var(--gold-light) 100%);
-      background-size: 200% 200%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background-size: 200% 200%; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
       animation: shimmer 4s ease-in-out infinite, fadeUp 1s 1.2s forwards;
-      opacity: 0;
-      letter-spacing: 0.06em;
-      line-height: 1.2;
+      opacity: 0; letter-spacing: 0.06em; line-height: 1.2;
       filter: drop-shadow(0 2px 10px rgba(212, 168, 71, 0.3));
     }
+    @keyframes shimmer { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 
-    @keyframes shimmer {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-
-    /* ===== BAT SIGNAL "1" ===== */
+    /* ===== BAT SIGNAL "1" — DRAMATIC BEAM ===== */
     .bat-signal-section {
+      position: relative; width: 100%; padding: 0 0 24px;
+      display: flex; justify-content: center; align-items: center;
+      opacity: 0; animation: fadeIn 1.2s 1.3s forwards;
+    }
+
+    .bat-signal-wrapper {
+      display: flex; flex-direction: column; align-items: center;
       position: relative;
-      width: 100%;
-      padding: 10px 0 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      animation: fadeIn 1.2s 1.3s forwards;
     }
 
-    .bat-signal-container {
-      position: relative;
-      width: 180px;
-      height: 180px;
+    .beam-container {
+      position: relative; width: 240px; height: 260px;
     }
 
-    /* Beam of light from below */
-    .signal-beam {
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 120px;
-      height: 200px;
-      background: conic-gradient(from 180deg at 50% 100%, transparent 30%, rgba(212, 168, 71, 0.06) 40%, rgba(212, 168, 71, 0.1) 50%, rgba(212, 168, 71, 0.06) 60%, transparent 70%);
-      pointer-events: none;
-      animation: beam-pulse 3s ease-in-out infinite;
+    /* Main beam — triangular cone of light shooting upward */
+    .beam-cone {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 220px solid rgba(212, 168, 71, 0.04);
+      filter: blur(8px);
     }
 
-    @keyframes beam-pulse {
-      0%, 100% { opacity: 0.7; }
-      50% { opacity: 1; }
+    .beam-cone-inner {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 25px solid transparent;
+      border-right: 25px solid transparent;
+      border-bottom: 220px solid rgba(212, 168, 71, 0.06);
+      filter: blur(4px);
     }
 
-    /* Cloud / signal circle */
-    .signal-circle {
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(212, 168, 71, 0.12) 0%, rgba(212, 168, 71, 0.06) 40%, transparent 70%);
-      animation: circle-glow 3s ease-in-out infinite;
+    .beam-cone-core {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 220px solid rgba(212, 168, 71, 0.09);
+      filter: blur(2px);
     }
 
-    @keyframes circle-glow {
-      0%, 100% { transform: scale(1); opacity: 0.8; }
-      50% { transform: scale(1.05); opacity: 1; }
+    /* Wider atmospheric glow */
+    .beam-atmosphere {
+      position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 270px;
+      background: conic-gradient(from 180deg at 50% 100%,
+        transparent 25%,
+        rgba(212, 168, 71, 0.03) 35%,
+        rgba(212, 168, 71, 0.07) 45%,
+        rgba(212, 168, 71, 0.09) 50%,
+        rgba(212, 168, 71, 0.07) 55%,
+        rgba(212, 168, 71, 0.03) 65%,
+        transparent 75%
+      );
+      animation: beam-breathe 4s ease-in-out infinite;
+    }
+
+    @keyframes beam-breathe {
+      0%, 100% { opacity: 0.7; transform: translateX(-50%) scaleX(1); }
+      50% { opacity: 1; transform: translateX(-50%) scaleX(1.05); }
+    }
+
+    /* Light rays emanating from the signal */
+    .light-rays {
+      position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+      width: 180px; height: 180px;
+    }
+
+    .ray {
+      position: absolute; top: 50%; left: 50%;
+      width: 90px; height: 1px;
+      background: linear-gradient(90deg, rgba(212, 168, 71, 0.3), transparent);
+      transform-origin: 0 50%;
+      animation: ray-pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes ray-pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.8; }
+    }
+
+    /* Glowing cloud/orb where the number projects */
+    .signal-cloud {
+      position: absolute; top: 10px; left: 50%; transform: translateX(-50%);
+      width: 140px; height: 140px; border-radius: 50%;
+      background: radial-gradient(circle,
+        rgba(212, 168, 71, 0.15) 0%,
+        rgba(212, 168, 71, 0.08) 35%,
+        rgba(212, 168, 71, 0.03) 55%,
+        transparent 70%
+      );
+      animation: cloud-glow 3s ease-in-out infinite;
+    }
+
+    @keyframes cloud-glow {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; }
+      50% { transform: translateX(-50%) scale(1.08); opacity: 1; }
     }
 
     .signal-ring {
-      position: absolute;
-      inset: 15px;
-      border-radius: 50%;
+      position: absolute; top: 35px; left: 50%; transform: translateX(-50%);
+      width: 100px; height: 100px; border-radius: 50%;
       border: 1px solid rgba(212, 168, 71, 0.2);
     }
 
-    .signal-ring-inner {
-      position: absolute;
-      inset: 25px;
-      border-radius: 50%;
-      border: 1px solid rgba(212, 168, 71, 0.12);
+    .signal-ring-outer {
+      position: absolute; top: 20px; left: 50%; transform: translateX(-50%);
+      width: 130px; height: 130px; border-radius: 50%;
+      border: 1px solid rgba(212, 168, 71, 0.08);
     }
 
-    /* The "1" in bat-signal style */
+    /* Mini bat inside the signal */
+    .signal-bat {
+      position: absolute; top: 36px; left: 50%; transform: translateX(-50%);
+      width: 36px; height: 14px; z-index: 3; opacity: 0.6;
+    }
+
+    /* The "1" number */
     .signal-number {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 4.5rem;
-      font-weight: 900;
-      color: var(--gold-light);
+      position: absolute; top: 44px; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-display); font-size: 4.5rem; font-weight: 900;
+      color: var(--gold-light); z-index: 2;
       text-shadow:
-        0 0 30px rgba(212, 168, 71, 0.6),
-        0 0 60px rgba(212, 168, 71, 0.3),
-        0 0 90px rgba(212, 168, 71, 0.15);
-      z-index: 2;
+        0 0 20px rgba(212, 168, 71, 0.7),
+        0 0 40px rgba(212, 168, 71, 0.4),
+        0 0 80px rgba(212, 168, 71, 0.2),
+        0 0 120px rgba(212, 168, 71, 0.1);
       animation: number-glow 3s ease-in-out infinite;
     }
-
     @keyframes number-glow {
-      0%, 100% { text-shadow: 0 0 30px rgba(212,168,71,0.6), 0 0 60px rgba(212,168,71,0.3), 0 0 90px rgba(212,168,71,0.15); }
-      50% { text-shadow: 0 0 40px rgba(212,168,71,0.8), 0 0 80px rgba(212,168,71,0.4), 0 0 120px rgba(212,168,71,0.2); }
+      0%, 100% { text-shadow: 0 0 20px rgba(212,168,71,0.7),0 0 40px rgba(212,168,71,0.4),0 0 80px rgba(212,168,71,0.2); }
+      50% { text-shadow: 0 0 30px rgba(212,168,71,0.9),0 0 60px rgba(212,168,71,0.5),0 0 100px rgba(212,168,71,0.3),0 0 140px rgba(212,168,71,0.15); }
+    }
+
+    /* Beam source (light at bottom) */
+    .beam-source {
+      position: absolute; bottom: -4px; left: 50%; transform: translateX(-50%);
+      width: 24px; height: 8px; border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(212, 168, 71, 0.8), rgba(212, 168, 71, 0.2), transparent);
+      box-shadow: 0 0 15px rgba(212, 168, 71, 0.5), 0 0 30px rgba(212, 168, 71, 0.3);
     }
 
     .signal-label {
-      font-family: var(--font-heading);
-      font-size: 0.6rem;
-      letter-spacing: 0.35em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-align: center;
-      margin-top: -4px;
-      opacity: 0;
-      animation: fadeUp 0.8s 1.6s forwards;
-    }
-
-    /* Small bat silhouette above the "1" */
-    .signal-bat {
-      position: absolute;
-      top: 34px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 32px;
-      height: 13px;
-      z-index: 3;
-      opacity: 0.5;
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.35em;
+      text-transform: uppercase; color: var(--gold); text-align: center;
+      margin-top: 2px; opacity: 0; animation: fadeUp 0.8s 1.6s forwards;
     }
 
     /* ===== SKYLINE ===== */
     .skyline-section {
-      position: relative;
-      width: 100%;
-      height: 120px;
-      overflow: hidden;
+      position: relative; width: 100%; height: 120px; overflow: hidden;
       background: linear-gradient(180deg, var(--black-card) 0%, var(--black-surface) 100%);
     }
+    .skyline-section svg { width: 100%; height: 100%; position: absolute; bottom: 0; }
 
-    .skyline-section svg {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-    }
+    .star { animation: twinkle ease-in-out infinite alternate; }
+    @keyframes twinkle { 0% { opacity: 0.05; } 50% { opacity: 0.95; } 100% { opacity: 0.1; } }
 
-    .star {
-      animation: twinkle ease-in-out infinite alternate;
-    }
-
-    @keyframes twinkle {
-      0% { opacity: 0.05; }
-      50% { opacity: 0.95; }
-      100% { opacity: 0.1; }
-    }
-
-    .bldg-light {
-      animation: flicker ease-in-out infinite;
-    }
-
+    .bldg-light { animation: flicker ease-in-out infinite; }
     @keyframes flicker {
-      0%, 100% { opacity: 0.7; }
-      15% { opacity: 0.3; }
-      30% { opacity: 0.8; }
-      45% { opacity: 0.1; }
-      60% { opacity: 0.6; }
-      75% { opacity: 0.9; }
-      90% { opacity: 0.4; }
+      0%, 100% { opacity: 0.7; } 15% { opacity: 0.3; } 30% { opacity: 0.8; }
+      45% { opacity: 0.1; } 60% { opacity: 0.6; } 75% { opacity: 0.9; } 90% { opacity: 0.4; }
     }
 
     /* ===== DETAILS ===== */
@@ -440,204 +348,99 @@
       padding: 30px 40px;
       background: linear-gradient(180deg, var(--black-surface) 0%, var(--black-card) 100%);
     }
-
-    .detail-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .detail-item {
-      text-align: center;
-      opacity: 0;
-      animation: fadeUp 0.8s forwards;
-    }
-
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .detail-item { text-align: center; opacity: 0; animation: fadeUp 0.8s forwards; }
     .detail-item:nth-child(1) { animation-delay: 1.6s; }
     .detail-item:nth-child(2) { animation-delay: 1.7s; }
     .detail-item:nth-child(3) { animation-delay: 1.8s; }
 
     .detail-icon {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      margin: 0 auto 10px;
-      border: 1px solid rgba(212, 168, 71, 0.3);
-      border-radius: 50%;
-      color: var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px; margin: 0 auto 10px;
+      border: 1px solid rgba(212, 168, 71, 0.3); border-radius: 50%; color: var(--gold);
     }
-
     .detail-icon svg { width: 18px; height: 18px; }
 
     .detail-label {
-      font-family: var(--font-heading);
-      font-size: 0.6rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 6px;
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 6px;
     }
-
     .detail-value {
-      font-family: var(--font-body);
-      font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
-      color: var(--white-text);
-      line-height: 1.5;
-      font-weight: 500;
+      font-family: var(--font-body); font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+      color: var(--white-text); line-height: 1.5; font-weight: 500;
     }
-
     .detail-value-small {
-      font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.95rem);
-      color: var(--white-muted);
-      font-weight: 400;
+      font-size: clamp(0.8rem, 0.75rem + 0.2vw, 0.95rem); color: var(--white-muted); font-weight: 400;
     }
-
     .detail-full { grid-column: 1 / -1; }
 
-    /* Venue link */
     .venue-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      margin-top: 8px;
-      font-family: var(--font-heading);
-      font-size: 0.55rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      text-decoration: none;
-      border: 1px solid rgba(212, 168, 71, 0.3);
-      padding: 6px 14px;
-      border-radius: 2px;
+      display: inline-flex; align-items: center; gap: 5px; margin-top: 8px;
+      font-family: var(--font-heading); font-size: 0.55rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--gold); text-decoration: none;
+      border: 1px solid rgba(212, 168, 71, 0.3); padding: 6px 14px; border-radius: 2px;
       transition: all 0.3s ease;
     }
-
-    .venue-link:hover {
-      background: rgba(212, 168, 71, 0.1);
-      border-color: var(--gold);
-    }
-
+    .venue-link:hover { background: rgba(212, 168, 71, 0.1); border-color: var(--gold); }
     .venue-link svg { width: 12px; height: 12px; }
 
-    /* ===== DIVIDER SM ===== */
+    /* ===== DIVIDER SMALL (with gold runner) ===== */
     .divider-sm {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 6px 40px;
-      background: var(--black-card);
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 6px 40px; background: var(--black-card);
     }
-
-    .divider-sm .divider-line { height: 1px; }
-
+    .divider-sm .divider-line-animated { height: 1px; }
     .divider-sm .divider-diamond {
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      transform: rotate(45deg);
-      flex-shrink: 0;
+      width: 6px; height: 6px; background: var(--gold);
+      transform: rotate(45deg); flex-shrink: 0;
     }
 
     /* ===== ATTIRE ===== */
     .attire-section {
-      padding: 28px 40px;
-      text-align: center;
-      background: var(--black-card);
-      opacity: 0;
-      animation: fadeUp 0.8s 2s forwards;
+      padding: 28px 40px; text-align: center; background: var(--black-card);
+      opacity: 0; animation: fadeUp 0.8s 2s forwards;
     }
-
     .attire-label {
-      font-family: var(--font-heading);
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
     }
-
     .attire-value {
-      font-family: var(--font-body);
-      font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
-      color: var(--white-text);
-      font-style: italic;
-      font-weight: 400;
+      font-family: var(--font-body); font-size: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+      color: var(--white-text); font-style: italic; font-weight: 400;
     }
-
     .attire-hint {
-      font-family: var(--font-body);
-      font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
-      color: var(--white-muted);
-      margin-top: 6px;
-      font-weight: 300;
+      font-family: var(--font-body); font-size: clamp(0.85rem, 0.8rem + 0.2vw, 0.95rem);
+      color: var(--white-muted); margin-top: 6px; font-weight: 300;
     }
 
     /* ===== HOSTS ===== */
     .hosts-section {
-      padding: 28px 40px 40px;
-      text-align: center;
-      background: var(--black-card);
-      opacity: 0;
-      animation: fadeUp 0.8s 2.2s forwards;
+      padding: 28px 40px 40px; text-align: center; background: var(--black-card);
+      opacity: 0; animation: fadeUp 0.8s 2.2s forwards;
     }
-
     .hosts-label {
-      font-family: var(--font-heading);
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 10px;
+      font-family: var(--font-heading); font-size: 0.6rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 10px;
     }
-
     .hosts-names {
-      font-family: var(--font-heading);
-      font-size: clamp(1rem, 0.85rem + 0.6vw, 1.35rem);
-      color: var(--gold-light);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      line-height: 1.6;
+      font-family: var(--font-heading); font-size: clamp(1rem, 0.85rem + 0.6vw, 1.35rem);
+      color: var(--gold-light); font-weight: 600; letter-spacing: 0.04em; line-height: 1.6;
     }
 
     /* ===== FOOTER ===== */
     .footer-bat {
-      padding: 24px 40px 30px;
-      text-align: center;
-      background: var(--black-card);
-      opacity: 0;
-      animation: fadeUp 0.8s 2.4s forwards;
+      padding: 24px 40px 30px; text-align: center; background: var(--black-card);
+      opacity: 0; animation: fadeUp 0.8s 2.4s forwards;
     }
-
-    .footer-bat svg {
-      width: 36px;
-      height: 14px;
-      margin: 0 auto;
-      opacity: 0.4;
-    }
-
+    .footer-bat .bat-logo-sm { width: 36px; height: 14px; margin: 0 auto; opacity: 0.4; }
     .footer-tagline {
-      font-family: var(--font-body);
-      font-size: 0.8rem;
-      color: var(--white-muted);
-      margin-top: 10px;
-      font-style: italic;
-      font-weight: 300;
-      opacity: 0.6;
+      font-family: var(--font-body); font-size: 0.8rem; color: var(--white-muted);
+      margin-top: 10px; font-style: italic; font-weight: 300; opacity: 0.6;
     }
 
     /* ===== ANIMATIONS ===== */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(16px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 480px) {
@@ -653,16 +456,22 @@
       .corner-tr { top: 6px; right: 6px; }
       .corner-bl { bottom: 6px; left: 6px; }
       .corner-br { bottom: 6px; right: 6px; }
-      .bat-logo { width: 120px; height: 48px; }
-      .bat-signal-container { width: 150px; height: 150px; }
-      .signal-number { font-size: 3.5rem; }
-      .signal-bat { top: 28px; width: 26px; height: 10px; }
+      .bat-logo { width: 130px; height: 49px; }
+      .beam-container { width: 200px; height: 220px; }
+      .signal-number { font-size: 3.5rem; top: 38px; }
+      .signal-bat { top: 30px; width: 28px; height: 11px; }
+      .signal-cloud { top: 6px; width: 120px; height: 120px; }
+      .signal-ring { top: 28px; width: 86px; height: 86px; }
+      .signal-ring-outer { top: 14px; width: 114px; height: 114px; }
+      .beam-cone { border-left-width: 32px; border-right-width: 32px; border-bottom-width: 180px; }
+      .beam-cone-inner { border-left-width: 20px; border-right-width: 20px; border-bottom-width: 180px; }
+      .beam-cone-core { border-left-width: 10px; border-right-width: 10px; border-bottom-width: 180px; }
+      .beam-atmosphere { width: 160px; height: 230px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
+        animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
       }
     }
@@ -670,14 +479,9 @@
 </head>
 <body>
 
-  <!-- Background diamond pattern -->
   <div class="bg-pattern">
     <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-      <defs>
-        <pattern id="diamonds" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="rgb(212,168,71)" stroke-width="0.3"/>
-        </pattern>
-      </defs>
+      <defs><pattern id="diamonds" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="rgb(212,168,71)" stroke-width="0.3"/></pattern></defs>
       <rect width="100" height="100" fill="url(#diamonds)"/>
     </svg>
   </div>
@@ -687,140 +491,118 @@
   <div class="invitation">
     <div class="card">
 
-      <!-- Corner ornaments -->
+      <!-- Corners -->
       <div class="corner-ornament corner-tl"><svg viewBox="0 0 60 60" fill="none"><path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/><circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/></svg></div>
       <div class="corner-ornament corner-tr"><svg viewBox="0 0 60 60" fill="none"><path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/><circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/></svg></div>
       <div class="corner-ornament corner-bl"><svg viewBox="0 0 60 60" fill="none"><path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/><circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/></svg></div>
       <div class="corner-ornament corner-br"><svg viewBox="0 0 60 60" fill="none"><path d="M2 2 L2 25" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L25 2" stroke="rgb(212,168,71)" stroke-width="1" opacity="0.5"/><path d="M2 2 L16 16" stroke="rgb(212,168,71)" stroke-width="0.5" opacity="0.3"/><circle cx="2" cy="2" r="2" fill="rgb(212,168,71)" opacity="0.6"/></svg></div>
 
-      <!-- HERO -->
+      <!-- HERO with exact traced bat logo -->
       <section class="hero">
-        <div class="bat-signal-beam"></div>
-
-        <!-- Dark Knight Rises Bat Logo - angular, sharp, sleek -->
+        <div class="bat-signal-beam-top"></div>
         <div class="bat-logo">
-          <svg viewBox="0 0 600 240" fill="rgb(212,168,71)">
-            <path d="
-              M300 0
-              C300 0, 293 18, 288 32
-              C283 44, 276 56, 270 58
-              L262 38
-              C258 30, 254 26, 254 26
-              C254 26, 254 40, 252 56
-              C250 72, 244 90, 234 102
-              C220 84, 196 66, 168 52
-              C136 36, 98 34, 60 44
-              C36 50, 16 64, 0 82
-              C20 74, 44 68, 64 68
-              C42 82, 24 104, 14 126
-              C34 116, 52 108, 68 108
-              C50 128, 38 156, 32 178
-              C48 166, 64 154, 82 150
-              C68 170, 62 196, 60 218
-              C78 200, 96 184, 116 176
-              C112 196, 118 218, 142 236
-              C158 220, 186 198, 204 180
-              C216 194, 232 218, 252 240
-              C266 226, 280 206, 288 190
-              C290 200, 296 216, 300 230
-              C304 216, 310 200, 312 190
-              C320 206, 334 226, 348 240
-              C368 218, 384 194, 396 180
-              C414 198, 442 220, 458 236
-              C482 218, 488 196, 484 176
-              C504 184, 522 200, 540 218
-              C538 196, 532 170, 518 150
-              C536 154, 552 166, 568 178
-              C562 156, 550 128, 532 108
-              C548 108, 566 116, 586 126
-              C576 104, 558 82, 536 68
-              C556 68, 580 74, 600 82
-              C584 64, 564 50, 540 44
-              C502 34, 464 36, 432 52
-              C404 66, 380 84, 366 102
-              C356 90, 350 72, 348 56
-              C346 40, 346 26, 346 26
-              C346 26, 342 30, 338 38
-              L330 58
-              C324 56, 317 44, 312 32
-              C307 18, 300 0, 300 0
-              Z
-            "/>
+          <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0,124) scale(0.1,-0.1)" fill="rgb(212,168,71)" stroke="none">
+              <path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/>
+            </g>
           </svg>
         </div>
-
         <p class="pre-title">You are cordially invited to</p>
         <h1 class="hero-title">Iman Seejae's<br>First Birthday</h1>
         <p class="hero-subtitle">Saturday, May 9, 2026</p>
       </section>
 
-      <!-- Divider with mini bat -->
+      <!-- Divider with gold runner -->
       <div class="divider">
-        <span class="divider-line"></span>
+        <span class="divider-line-animated"></span>
         <span class="divider-icon">
-          <svg viewBox="0 0 600 240" fill="currentColor">
-            <path d="M300 0 C300 0,293 18,288 32 C283 44,276 56,270 58 L262 38 C258 30,254 26,254 26 C254 26,254 40,252 56 C250 72,244 90,234 102 C220 84,196 66,168 52 C136 36,98 34,60 44 C36 50,16 64,0 82 C20 74,44 68,64 68 C42 82,24 104,14 126 C34 116,52 108,68 108 C50 128,38 156,32 178 C48 166,64 154,82 150 C68 170,62 196,60 218 C78 200,96 184,116 176 C112 196,118 218,142 236 C158 220,186 198,204 180 C216 194,232 218,252 240 C266 226,280 206,288 190 C290 200,296 216,300 230 C304 216,310 200,312 190 C320 206,334 226,348 240 C368 218,384 194,396 180 C414 198,442 220,458 236 C482 218,488 196,484 176 C504 184,522 200,540 218 C538 196,532 170,518 150 C536 154,552 166,568 178 C562 156,550 128,532 108 C548 108,566 116,586 126 C576 104,558 82,536 68 C556 68,580 74,600 82 C584 64,564 50,540 44 C502 34,464 36,432 52 C404 66,380 84,366 102 C356 90,350 72,348 56 C346 40,346 26,346 26 C346 26,342 30,338 38 L330 58 C324 56,317 44,312 32 C307 18,300 0,300 0 Z"/>
+          <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0,124) scale(0.1,-0.1)" fill="currentColor" stroke="none">
+              <path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/>
+            </g>
           </svg>
         </span>
-        <span class="divider-line"></span>
+        <span class="divider-line-animated"></span>
       </div>
 
-      <!-- Baby Name -->
+      <!-- Name -->
       <section class="name-section">
         <p class="name-intro">Please join us as we celebrate</p>
         <h2 class="baby-name">Iman Seejae</h2>
       </section>
 
-      <!-- Bat Signal "1" -->
+      <!-- Bat Signal "1" with dramatic beam projection -->
       <div class="bat-signal-section">
-        <div style="display: flex; flex-direction: column; align-items: center;">
-          <div class="bat-signal-container">
-            <div class="signal-beam"></div>
-            <div class="signal-circle"></div>
+        <div class="bat-signal-wrapper">
+          <div class="beam-container">
+            <!-- Atmospheric glow -->
+            <div class="beam-atmosphere"></div>
+            <!-- Layered beam cones -->
+            <div class="beam-cone"></div>
+            <div class="beam-cone-inner"></div>
+            <div class="beam-cone-core"></div>
+            <!-- Glowing cloud at top -->
+            <div class="signal-cloud"></div>
+            <div class="signal-ring-outer"></div>
             <div class="signal-ring"></div>
-            <div class="signal-ring-inner"></div>
-            <!-- Mini bat on top of signal -->
+
+            <!-- Light rays -->
+            <div class="light-rays">
+              <div class="ray" style="transform:rotate(-70deg);animation-delay:0s;"></div>
+              <div class="ray" style="transform:rotate(-45deg);animation-delay:0.4s;"></div>
+              <div class="ray" style="transform:rotate(-20deg);animation-delay:0.8s;"></div>
+              <div class="ray" style="transform:rotate(10deg);animation-delay:0.2s;"></div>
+              <div class="ray" style="transform:rotate(40deg);animation-delay:0.6s;"></div>
+              <div class="ray" style="transform:rotate(65deg);animation-delay:1s;"></div>
+              <div class="ray" style="transform:rotate(110deg);animation-delay:0.3s;width:70px;"></div>
+              <div class="ray" style="transform:rotate(135deg);animation-delay:0.7s;width:70px;"></div>
+              <div class="ray" style="transform:rotate(160deg);animation-delay:1.1s;width:70px;"></div>
+              <div class="ray" style="transform:rotate(200deg);animation-delay:0.5s;width:70px;"></div>
+              <div class="ray" style="transform:rotate(225deg);animation-delay:0.9s;width:70px;"></div>
+              <div class="ray" style="transform:rotate(250deg);animation-delay:1.3s;"></div>
+            </div>
+
+            <!-- Mini bat above -->
             <div class="signal-bat">
-              <svg viewBox="0 0 600 240" fill="rgb(212,168,71)">
-                <path d="M300 0 C300 0,293 18,288 32 C283 44,276 56,270 58 L262 38 C258 30,254 26,254 26 C254 26,254 40,252 56 C250 72,244 90,234 102 C220 84,196 66,168 52 C136 36,98 34,60 44 C36 50,16 64,0 82 C20 74,44 68,64 68 C42 82,24 104,14 126 C34 116,52 108,68 108 C50 128,38 156,32 178 C48 166,64 154,82 150 C68 170,62 196,60 218 C78 200,96 184,116 176 C112 196,118 218,142 236 C158 220,186 198,204 180 C216 194,232 218,252 240 C266 226,280 206,288 190 C290 200,296 216,300 230 C304 216,310 200,312 190 C320 206,334 226,348 240 C368 218,384 194,396 180 C414 198,442 220,458 236 C482 218,488 196,484 176 C504 184,522 200,540 218 C538 196,532 170,518 150 C536 154,552 166,568 178 C562 156,550 128,532 108 C548 108,566 116,586 126 C576 104,558 82,536 68 C556 68,580 74,600 82 C584 64,564 50,540 44 C502 34,464 36,432 52 C404 66,380 84,366 102 C356 90,350 72,348 56 C346 40,346 26,346 26 C346 26,342 30,338 38 L330 58 C324 56,317 44,312 32 C307 18,300 0,300 0 Z"/>
+              <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet">
+                <g transform="translate(0,124) scale(0.1,-0.1)" fill="rgb(212,168,71)" stroke="none">
+                  <path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/>
+                </g>
               </svg>
             </div>
+
             <div class="signal-number">1</div>
+            <div class="beam-source"></div>
           </div>
           <p class="signal-label">Turns One</p>
         </div>
       </div>
 
-      <!-- Skyline with white twinkling stars -->
+      <!-- Skyline -->
       <div class="skyline-section">
         <svg viewBox="0 0 680 120" preserveAspectRatio="xMidYMax slice">
-          <!-- WHITE twinkling stars -->
-          <circle class="star" cx="45" cy="12" r="1.2" fill="#ffffff" style="animation-duration:2.1s;animation-delay:0.3s;"/>
-          <circle class="star" cx="110" cy="22" r="0.8" fill="#ffffff" style="animation-duration:3.2s;animation-delay:1.1s;"/>
-          <circle class="star" cx="165" cy="8" r="1" fill="#ffffff" style="animation-duration:2.7s;animation-delay:0.6s;"/>
-          <circle class="star" cx="230" cy="18" r="0.7" fill="#ffffff" style="animation-duration:1.9s;animation-delay:2.2s;"/>
-          <circle class="star" cx="290" cy="6" r="1.3" fill="#ffffff" style="animation-duration:2.5s;animation-delay:0.9s;"/>
-          <circle class="star" cx="340" cy="25" r="0.9" fill="#ffffff" style="animation-duration:3.5s;animation-delay:1.5s;"/>
-          <circle class="star" cx="400" cy="10" r="1.1" fill="#ffffff" style="animation-duration:2.3s;animation-delay:0.1s;"/>
-          <circle class="star" cx="460" cy="20" r="0.8" fill="#ffffff" style="animation-duration:2.8s;animation-delay:1.8s;"/>
-          <circle class="star" cx="520" cy="5" r="1" fill="#ffffff" style="animation-duration:3.1s;animation-delay:0.4s;"/>
-          <circle class="star" cx="575" cy="15" r="1.2" fill="#ffffff" style="animation-duration:2s;animation-delay:2.5s;"/>
-          <circle class="star" cx="630" cy="8" r="0.7" fill="#ffffff" style="animation-duration:2.6s;animation-delay:1.3s;"/>
-          <circle class="star" cx="80" cy="30" r="0.6" fill="#ffffff" style="animation-duration:3.8s;animation-delay:0.7s;"/>
-          <circle class="star" cx="195" cy="32" r="0.9" fill="#ffffff" style="animation-duration:2.4s;animation-delay:1.9s;"/>
-          <circle class="star" cx="370" cy="3" r="1" fill="#ffffff" style="animation-duration:3s;animation-delay:0.5s;"/>
-          <circle class="star" cx="500" cy="28" r="0.7" fill="#ffffff" style="animation-duration:2.2s;animation-delay:2.8s;"/>
-          <circle class="star" cx="660" cy="22" r="0.8" fill="#ffffff" style="animation-duration:3.3s;animation-delay:1.6s;"/>
-          <circle class="star" cx="15" cy="20" r="0.9" fill="#ffffff" style="animation-duration:2.9s;animation-delay:0.2s;"/>
-          <circle class="star" cx="255" cy="30" r="0.6" fill="#ffffff" style="animation-duration:3.6s;animation-delay:2.1s;"/>
-          <circle class="star" cx="140" cy="14" r="0.5" fill="#ffffff" style="animation-duration:4.1s;animation-delay:0.8s;"/>
-          <circle class="star" cx="430" cy="12" r="0.7" fill="#ffffff" style="animation-duration:2.3s;animation-delay:1.4s;"/>
-          <circle class="star" cx="550" cy="26" r="0.6" fill="#ffffff" style="animation-duration:3.4s;animation-delay:2.3s;"/>
+          <circle class="star" cx="45" cy="12" r="1.2" fill="#fff" style="animation-duration:2.1s;animation-delay:0.3s;"/>
+          <circle class="star" cx="110" cy="22" r="0.8" fill="#fff" style="animation-duration:3.2s;animation-delay:1.1s;"/>
+          <circle class="star" cx="165" cy="8" r="1" fill="#fff" style="animation-duration:2.7s;animation-delay:0.6s;"/>
+          <circle class="star" cx="230" cy="18" r="0.7" fill="#fff" style="animation-duration:1.9s;animation-delay:2.2s;"/>
+          <circle class="star" cx="290" cy="6" r="1.3" fill="#fff" style="animation-duration:2.5s;animation-delay:0.9s;"/>
+          <circle class="star" cx="340" cy="25" r="0.9" fill="#fff" style="animation-duration:3.5s;animation-delay:1.5s;"/>
+          <circle class="star" cx="400" cy="10" r="1.1" fill="#fff" style="animation-duration:2.3s;animation-delay:0.1s;"/>
+          <circle class="star" cx="460" cy="20" r="0.8" fill="#fff" style="animation-duration:2.8s;animation-delay:1.8s;"/>
+          <circle class="star" cx="520" cy="5" r="1" fill="#fff" style="animation-duration:3.1s;animation-delay:0.4s;"/>
+          <circle class="star" cx="575" cy="15" r="1.2" fill="#fff" style="animation-duration:2s;animation-delay:2.5s;"/>
+          <circle class="star" cx="630" cy="8" r="0.7" fill="#fff" style="animation-duration:2.6s;animation-delay:1.3s;"/>
+          <circle class="star" cx="80" cy="30" r="0.6" fill="#fff" style="animation-duration:3.8s;animation-delay:0.7s;"/>
+          <circle class="star" cx="195" cy="32" r="0.9" fill="#fff" style="animation-duration:2.4s;animation-delay:1.9s;"/>
+          <circle class="star" cx="370" cy="3" r="1" fill="#fff" style="animation-duration:3s;animation-delay:0.5s;"/>
+          <circle class="star" cx="500" cy="28" r="0.7" fill="#fff" style="animation-duration:2.2s;animation-delay:2.8s;"/>
+          <circle class="star" cx="660" cy="22" r="0.8" fill="#fff" style="animation-duration:3.3s;animation-delay:1.6s;"/>
+          <circle class="star" cx="15" cy="20" r="0.9" fill="#fff" style="animation-duration:2.9s;animation-delay:0.2s;"/>
+          <circle class="star" cx="255" cy="30" r="0.6" fill="#fff" style="animation-duration:3.6s;animation-delay:2.1s;"/>
+          <circle class="star" cx="140" cy="14" r="0.5" fill="#fff" style="animation-duration:4.1s;animation-delay:0.8s;"/>
+          <circle class="star" cx="430" cy="12" r="0.7" fill="#fff" style="animation-duration:2.3s;animation-delay:1.4s;"/>
 
-          <!-- Ground -->
           <rect x="0" y="80" width="680" height="40" fill="#1a1a1a"/>
-
-          <!-- Buildings -->
           <rect x="20" y="56" width="30" height="64" rx="1" fill="#1a1a1a"/>
           <rect x="55" y="44" width="20" height="76" rx="1" fill="#1a1a1a"/>
           <rect x="80" y="62" width="35" height="58" rx="1" fill="#1a1a1a"/>
@@ -848,118 +630,85 @@
           <rect x="615" y="42" width="22" height="78" rx="1" fill="#1a1a1a"/>
           <rect x="642" y="56" width="38" height="64" rx="1" fill="#1a1a1a"/>
 
-          <!-- Flickering building lights (gold) -->
           <rect class="bldg-light" x="27" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration:3.2s;animation-delay:0.4s;"/>
           <rect class="bldg-light" x="35" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.1s;animation-delay:1.2s;"/>
-          <rect class="bldg-light" x="27" y="74" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:5.5s;animation-delay:2.6s;"/>
           <rect class="bldg-light" x="60" y="50" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:3.8s;animation-delay:0.7s;"/>
-          <rect class="bldg-light" x="66" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:4.5s;animation-delay:2.1s;"/>
           <rect class="bldg-light" x="125" y="42" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.7)" style="animation-duration:2.9s;animation-delay:0.3s;"/>
           <rect class="bldg-light" x="131" y="50" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:5.2s;animation-delay:1.8s;"/>
-          <rect class="bldg-light" x="125" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:3.6s;animation-delay:2.4s;"/>
           <rect class="bldg-light" x="205" y="34" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.7)" style="animation-duration:3.4s;animation-delay:0.5s;"/>
           <rect class="bldg-light" x="212" y="40" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.8s;animation-delay:1.6s;"/>
-          <rect class="bldg-light" x="205" y="48" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration:2.7s;animation-delay:2.9s;"/>
           <rect class="bldg-light" x="335" y="44" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration:3.7s;animation-delay:1.3s;"/>
-          <rect class="bldg-light" x="335" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:4.9s;animation-delay:2.7s;"/>
           <rect class="bldg-light" x="356" y="60" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.2s;animation-delay:1.9s;"/>
-          <rect class="bldg-light" x="365" y="66" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:5.3s;animation-delay:0.6s;"/>
           <rect class="bldg-light" x="475" y="22" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.7)" style="animation-duration:3.5s;animation-delay:0.1s;"/>
           <rect class="bldg-light" x="482" y="30" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.6s;animation-delay:1.7s;"/>
-          <rect class="bldg-light" x="475" y="38" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:5.4s;animation-delay:2.5s;"/>
           <rect class="bldg-light" x="620" y="48" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration:3.1s;animation-delay:0.9s;"/>
-          <rect class="bldg-light" x="628" y="56" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:5s;animation-delay:2.2s;"/>
           <rect class="bldg-light" x="650" y="62" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:3.4s;animation-delay:0.6s;"/>
-          <rect class="bldg-light" x="660" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:4s;animation-delay:2.8s;"/>
-          <rect class="bldg-light" x="505" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:3.9s;animation-delay:2s;"/>
           <rect class="bldg-light" x="270" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.6)" style="animation-duration:4.3s;animation-delay:0.5s;"/>
-          <rect class="bldg-light" x="416" y="50" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.6s;animation-delay:2.1s;"/>
-          <rect class="bldg-light" x="440" y="64" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:5.5s;animation-delay:1.3s;"/>
-          <rect class="bldg-light" x="566" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.1s;animation-delay:0.2s;"/>
-          <rect class="bldg-light" x="148" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.8s;animation-delay:2.4s;"/>
+          <rect class="bldg-light" x="505" y="58" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:3.9s;animation-delay:2s;"/>
           <rect class="bldg-light" x="88" y="68" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:3.6s;animation-delay:1.7s;"/>
+          <rect class="bldg-light" x="566" y="54" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.5)" style="animation-duration:4.1s;animation-delay:0.2s;"/>
         </svg>
       </div>
 
-      <!-- Event Details -->
+      <!-- Details -->
       <section class="details">
         <div class="detail-grid">
           <div class="detail-item">
-            <div class="detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="4" width="18" height="18" rx="2"/>
-                <line x1="16" y1="2" x2="16" y2="6"/>
-                <line x1="8" y1="2" x2="8" y2="6"/>
-                <line x1="3" y1="10" x2="21" y2="10"/>
-              </svg>
-            </div>
+            <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
             <p class="detail-label">When</p>
             <p class="detail-value">Saturday</p>
             <p class="detail-value">May 9, 2026</p>
             <p class="detail-value-small">6:00 PM Onwards</p>
           </div>
-
           <div class="detail-item">
-            <div class="detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 2C6.48 2 2 6 2 11c0 5.25 10 13 10 13s10-7.75 10-13c0-5-4.48-9-10-9z"/>
-                <circle cx="12" cy="11" r="3"/>
-              </svg>
-            </div>
+            <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <p class="detail-label">Where</p>
             <p class="detail-value">Accord Chrome</p>
             <p class="detail-value-small">Chromepet, Chennai</p>
-            <a href="https://maps.app.goo.gl/7CLC" target="_blank" rel="noopener" class="venue-link" id="map-link">
+            <a href="https://www.google.com/maps/search/Accord+Chrome+Chromepet+Chennai" target="_blank" rel="noopener" class="venue-link">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               View on Map
             </a>
           </div>
-
           <div class="detail-item detail-full">
-            <div class="detail-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12 6 12 12 16 14"/>
-              </svg>
-            </div>
+            <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <p class="detail-label">Cake Cutting</p>
             <p class="detail-value">7:00 PM</p>
           </div>
         </div>
       </section>
 
-      <!-- Divider -->
       <div class="divider-sm">
-        <span class="divider-line"></span>
+        <span class="divider-line-animated"></span>
         <span class="divider-diamond"></span>
-        <span class="divider-line"></span>
+        <span class="divider-line-animated"></span>
       </div>
 
-      <!-- Attire -->
       <section class="attire-section">
         <p class="attire-label">Dress Code</p>
         <p class="attire-value">Black &amp; Gold</p>
         <p class="attire-hint">Suit up in style for the occasion</p>
       </section>
 
-      <!-- Divider -->
       <div class="divider-sm">
-        <span class="divider-line"></span>
+        <span class="divider-line-animated"></span>
         <span class="divider-diamond"></span>
-        <span class="divider-line"></span>
+        <span class="divider-line-animated"></span>
       </div>
 
-      <!-- Hosts -->
       <section class="hosts-section">
         <p class="hosts-label">With love from</p>
         <p class="hosts-names">Jalin, Chanduru, Hana<br>&amp; Families</p>
       </section>
 
-      <!-- Footer -->
       <div class="footer-bat">
-        <svg viewBox="0 0 600 240" fill="rgb(212,168,71)">
-          <path d="M300 0 C300 0,293 18,288 32 C283 44,276 56,270 58 L262 38 C258 30,254 26,254 26 C254 26,254 40,252 56 C250 72,244 90,234 102 C220 84,196 66,168 52 C136 36,98 34,60 44 C36 50,16 64,0 82 C20 74,44 68,64 68 C42 82,24 104,14 126 C34 116,52 108,68 108 C50 128,38 156,32 178 C48 166,64 154,82 150 C68 170,62 196,60 218 C78 200,96 184,116 176 C112 196,118 218,142 236 C158 220,186 198,204 180 C216 194,232 218,252 240 C266 226,280 206,288 190 C290 200,296 216,300 230 C304 216,310 200,312 190 C320 206,334 226,348 240 C368 218,384 194,396 180 C414 198,442 220,458 236 C482 218,488 196,484 176 C504 184,522 200,540 218 C538 196,532 170,518 150 C536 154,552 166,568 178 C562 156,550 128,532 108 C548 108,566 116,586 126 C576 104,558 82,536 68 C556 68,580 74,600 82 C584 64,564 50,540 44 C502 34,464 36,432 52 C404 66,380 84,366 102 C356 90,350 72,348 56 C346 40,346 26,346 26 C346 26,342 30,338 38 L330 58 C324 56,317 44,312 32 C307 18,300 0,300 0 Z"/>
-        </svg>
+        <div class="bat-logo-sm">
+          <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet">
+            <g transform="translate(0,124) scale(0.1,-0.1)" fill="rgb(212,168,71)" stroke="none">
+              <path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/>
+            </g>
+          </svg>
+        </div>
         <p class="footer-tagline">Every great story begins at Chapter One</p>
       </div>
 
@@ -967,9 +716,8 @@
   </div>
 
   <script>
-    // Floating gold particles
     (function() {
-      const container = document.getElementById('particles');
+      const c = document.getElementById('particles');
       for (let i = 0; i < 25; i++) {
         const p = document.createElement('div');
         p.className = 'particle';
@@ -978,15 +726,7 @@
         p.style.animationDelay = (Math.random() * 10) + 's';
         p.style.width = (2 + Math.random() * 3) + 'px';
         p.style.height = p.style.width;
-        container.appendChild(p);
-      }
-    })();
-
-    // Set correct Google Maps link
-    (function() {
-      const link = document.getElementById('map-link');
-      if (link) {
-        link.href = 'https://www.google.com/maps/search/Accord+Chrome+Chromepet+Chennai';
+        c.appendChild(p);
       }
     })();
   </script>
