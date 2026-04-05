@@ -180,6 +180,10 @@
     .link-indicator { width: 12px; height: 12px; color: var(--gold); opacity: 0.6; flex-shrink: 0; vertical-align: middle; }
     .time-event-link { color: var(--white-text); text-decoration: none; transition: color 0.3s ease; cursor: pointer; }
     .time-event-link:hover { color: var(--gold-light); }
+    .time-event-link .detail-value { display: inline-flex; align-items: center; gap: 5px; }
+    .cal-when-link { display: block; }
+    .cal-when-link .detail-value { display: block; }
+    .cal-when-link .detail-value:last-child { display: inline-flex; align-items: center; gap: 5px; }
 
     /* ===== SMALL DIVIDER (bat symbol instead of diamond) ===== */
     .divider-sm { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 6px 40px; background: var(--black-card); }
@@ -429,8 +433,8 @@
           <div class="detail-item">
             <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
             <p class="detail-label">When</p>
-            <p class="detail-value">Saturday</p>
-            <p class="detail-value">May 9, 2026</p>
+            <a href="#" class="time-event-link add-cal-btn cal-when-link"><p class="detail-value">Saturday</p>
+            <p class="detail-value">May 9, 2026 <svg class="link-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg></p></a>
           </div>
           <div class="detail-item">
             <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
@@ -441,7 +445,7 @@
           <div class="detail-item detail-full">
             <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
             <p class="detail-label">Timing</p>
-            <a href="#" id="add-to-calendar" class="time-event-link"><p class="detail-value">6:00 PM Onwards</p></a>
+            <a href="#" class="time-event-link add-cal-btn"><p class="detail-value">6:00 PM Onwards <svg class="link-indicator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="12" y1="14" x2="12" y2="18"/><line x1="10" y1="16" x2="14" y2="16"/></svg></p></a>
           </div>
         </div>
       </section>
@@ -494,39 +498,38 @@
       }
 
       // Add to Calendar - generates .ics file for the event
-      const calBtn = document.getElementById('add-to-calendar');
-      if (calBtn) {
-        calBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          const icsContent = [
-            'BEGIN:VCALENDAR',
-            'VERSION:2.0',
-            'PRODID:-//Iman Seejae Birthday//EN',
-            'BEGIN:VEVENT',
-            'DTSTART:20260509T123000Z',
-            'DTEND:20260509T163000Z',
-            'SUMMARY:Iman Seejae\'s 1st Birthday Celebration',
-            'DESCRIPTION:Batman-themed 1st birthday celebration. Dress code: Black & Gold.',
-            'LOCATION:Accord Chrome\, Chromepet\, Chennai',
-            'BEGIN:VALARM',
-            'TRIGGER:-PT60M',
-            'ACTION:DISPLAY',
-            'DESCRIPTION:Iman Seejae\'s Birthday in 1 hour!',
-            'END:VALARM',
-            'END:VEVENT',
-            'END:VCALENDAR'
-          ].join('\r\n');
-          const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = 'iman-seejae-birthday.ics';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-        });
+      function downloadICS() {
+        const icsContent = [
+          'BEGIN:VCALENDAR',
+          'VERSION:2.0',
+          'PRODID:-//Iman Seejae Birthday//EN',
+          'BEGIN:VEVENT',
+          'DTSTART:20260509T123000Z',
+          'DTEND:20260509T163000Z',
+          'SUMMARY:Iman Seejae\'s 1st Birthday Celebration',
+          'DESCRIPTION:Batman-themed 1st birthday celebration. Dress code: Black & Gold.',
+          'LOCATION:Accord Chrome\, Chromepet\, Chennai',
+          'BEGIN:VALARM',
+          'TRIGGER:-PT60M',
+          'ACTION:DISPLAY',
+          'DESCRIPTION:Iman Seejae\'s Birthday in 1 hour!',
+          'END:VALARM',
+          'END:VEVENT',
+          'END:VCALENDAR'
+        ].join('\r\n');
+        const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'iman-seejae-birthday.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }
+      document.querySelectorAll('.add-cal-btn').forEach(function(btn) {
+        btn.addEventListener('click', function(e) { e.preventDefault(); downloadICS(); });
+      });
     })();
   </script>
 </body>
