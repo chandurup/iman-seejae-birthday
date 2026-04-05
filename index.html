@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Iman Seejae Turns 1 - Birthday Celebration</title>
   <meta property="og:title" content="You're Invited! Iman Seejae's 1st Birthday 🦇">
-  <meta property="og:description" content="Join us for a Batman-themed birthday bash on May 9, 2026 at Accord Chrome, Chromepet. Cake cutting at 7 PM. Dress code: Black & Gold.">
+  <meta property="og:description" content="Join us for a Batman-themed birthday bash on May 9, 2026 at Accord Chrome, Chromepet. 6 PM onwards. Dress code: Black & Gold.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -106,54 +106,62 @@
     .bldg-light { animation: flicker ease-in-out infinite; }
     @keyframes flicker { 0%,100% { opacity: 0.7; } 15% { opacity: 0.3; } 30% { opacity: 0.8; } 45% { opacity: 0.1; } 60% { opacity: 0.6; } 75% { opacity: 0.9; } 90% { opacity: 0.4; } }
 
-    /* Signal cloud in sky */
+    /* Signal cloud in sky - whitish low opacity */
     .signal-cloud-sky {
       position: absolute; top: 16px; left: 50%; transform: translateX(-50%);
       width: 130px; height: 130px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(212,168,71,0.14) 0%, rgba(212,168,71,0.06) 40%, transparent 65%);
+      background: radial-gradient(circle, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.04) 40%, transparent 65%);
       animation: cloud-breathe 3.5s ease-in-out infinite;
     }
-    @keyframes cloud-breathe { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.8; } 50% { transform: translateX(-50%) scale(1.06); opacity: 1; } }
+    @keyframes cloud-breathe { 0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.7; } 50% { transform: translateX(-50%) scale(1.06); opacity: 0.9; } }
 
     .signal-ring-sky {
       position: absolute; top: 36px; left: 50%; transform: translateX(-50%);
       width: 90px; height: 90px; border-radius: 50%;
-      border: 1px solid rgba(212,168,71,0.18);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    /* Mini bat in signal */
-    .signal-bat-sky {
-      position: absolute; top: 40px; left: 50%; transform: translateX(-50%);
-      width: 30px; height: 11px; opacity: 0.5;
+    /* Bat signal shape containing the "1" */
+    .signal-bat-container {
+      position: absolute; top: 30px; left: 50%; transform: translateX(-50%);
+      width: 120px; height: 80px;
+      display: flex; align-items: center; justify-content: center;
     }
+    .signal-bat-outline {
+      position: absolute; inset: 0;
+      opacity: 0.30;
+      filter: drop-shadow(0 0 12px rgba(255,255,255,0.25)) drop-shadow(0 0 25px rgba(255,255,255,0.1));
+    }
+    .signal-bat-outline svg { width: 100%; height: 100%; }
 
-    /* The "1" projected in the sky */
+    /* The "1" projected inside the bat signal */
     .signal-one {
-      position: absolute; top: 44px; left: 50%; transform: translateX(-50%);
-      font-family: var(--font-display); font-size: 3.8rem; font-weight: 900;
-      color: var(--gold-light);
-      text-shadow: 0 0 20px rgba(212,168,71,0.7), 0 0 40px rgba(212,168,71,0.4), 0 0 80px rgba(212,168,71,0.2);
+      position: relative; z-index: 2;
+      font-family: var(--font-display); font-size: 2.6rem; font-weight: 900;
+      color: rgba(255,255,255,0.80);
+      text-shadow: 0 0 12px rgba(255,255,255,0.4), 0 0 25px rgba(255,255,255,0.2), 0 0 50px rgba(255,255,255,0.08);
       animation: sky-number-glow 3s ease-in-out infinite;
+      margin-top: 2px;
     }
     @keyframes sky-number-glow {
-      0%, 100% { text-shadow: 0 0 20px rgba(212,168,71,0.7), 0 0 40px rgba(212,168,71,0.4), 0 0 80px rgba(212,168,71,0.2); }
-      50% { text-shadow: 0 0 30px rgba(212,168,71,0.9), 0 0 60px rgba(212,168,71,0.5), 0 0 100px rgba(212,168,71,0.3); }
+      0%, 100% { text-shadow: 0 0 15px rgba(255,255,255,0.5), 0 0 30px rgba(255,255,255,0.25), 0 0 60px rgba(255,255,255,0.1); }
+      50% { text-shadow: 0 0 20px rgba(255,255,255,0.7), 0 0 40px rgba(255,255,255,0.35), 0 0 80px rgba(255,255,255,0.15); }
     }
 
     .signal-turns-label {
-      position: absolute; top: 110px; left: 50%; transform: translateX(-50%);
+      position: absolute; top: 118px; left: 50%; transform: translateX(-50%);
       font-family: var(--font-heading); font-size: 0.55rem; letter-spacing: 0.35em;
-      text-transform: uppercase; color: var(--gold); white-space: nowrap;
+      text-transform: uppercase; color: rgba(255,255,255,0.5); white-space: nowrap;
     }
 
-    /* Light rays from signal */
+    /* Light rays from signal - whitish */
     .sky-rays { position: absolute; top: 56px; left: 50%; transform: translateX(-50%); width: 160px; height: 160px; }
     .sky-ray {
       position: absolute; top: 50%; left: 50%; width: 80px; height: 1px;
-      background: linear-gradient(90deg, rgba(212,168,71,0.25), transparent);
+      background: linear-gradient(90deg, rgba(255,255,255,0.15), transparent);
       transform-origin: 0 50%; animation: ray-fade 3.5s ease-in-out infinite;
     }
-    @keyframes ray-fade { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.7; } }
+    @keyframes ray-fade { 0%, 100% { opacity: 0.15; } 50% { opacity: 0.5; } }
 
     /* ===== DETAILS ===== */
     .details { padding: 30px 40px; background: linear-gradient(180deg, var(--black-surface) 0%, var(--black-card) 100%); }
@@ -171,11 +179,15 @@
     .venue-link { display: inline-flex; align-items: center; gap: 5px; margin-top: 8px; font-family: var(--font-heading); font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-decoration: none; border: 1px solid rgba(212,168,71,0.3); padding: 6px 14px; border-radius: 2px; transition: all 0.3s ease; }
     .venue-link:hover { background: rgba(212,168,71,0.1); border-color: var(--gold); }
     .venue-link svg { width: 12px; height: 12px; }
+    .venue-name-link { color: var(--white-text); text-decoration: none; transition: color 0.3s ease; }
+    .venue-name-link:hover { color: var(--gold-light); }
+    .time-event-link { color: var(--white-text); text-decoration: none; transition: color 0.3s ease; cursor: pointer; }
+    .time-event-link:hover { color: var(--gold-light); }
 
     /* ===== SMALL DIVIDER (bat symbol instead of diamond) ===== */
     .divider-sm { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 6px 40px; background: var(--black-card); }
     .divider-sm .divider-line-speck { height: 1px; }
-    .divider-sm .divider-bat-sm { flex-shrink: 0; color: var(--gold); width: 14px; height: 5px; }
+    .divider-sm .divider-bat-sm { flex-shrink: 0; color: var(--gold); width: 20px; height: 8px; }
 
     /* Sections */
     .attire-section { padding: 28px 40px; text-align: center; background: var(--black-card); opacity: 0; animation: fadeUp 0.8s 2s forwards; }
@@ -208,9 +220,9 @@
       .corner-bl { bottom: 6px; left: 6px; } .corner-br { bottom: 6px; right: 6px; }
       .bat-logo { width: 130px; height: 49px; }
       .skyline-signal-section { height: 240px; }
-      .signal-one { font-size: 3rem; top: 48px; }
-      .signal-bat-sky { top: 44px; width: 24px; height: 9px; }
-      .signal-turns-label { top: 104px; }
+      .signal-one { font-size: 2.2rem; }
+      .signal-bat-container { width: 100px; height: 65px; top: 32px; }
+      .signal-turns-label { top: 108px; }
       .signal-cloud-sky { width: 110px; height: 110px; top: 18px; }
       .signal-ring-sky { width: 75px; height: 75px; top: 40px; }
     }
@@ -237,9 +249,9 @@
         <div class="bat-logo">
           <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,124) scale(0.1,-0.1)" fill="rgb(212,168,71)" stroke="none"><path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/></g></svg>
         </div>
-        <p class="pre-title">A new light rises in our universe</p>
-        <h1 class="hero-title">Iman Seejae's<br>First Birthday</h1>
-        <p class="hero-subtitle">Saturday, May 9, 2026</p>
+        <p class="pre-title">The night sky awaits a celebration</p>
+        <h1 class="hero-title">You Are<br>Summoned</h1>
+        <p class="hero-subtitle">Saturday &middot; May 9, 2026</p>
       </section>
 
       <!-- Divider with bat icon -->
@@ -253,7 +265,7 @@
 
       <!-- Name with single speck -->
       <section class="name-section">
-        <p class="name-intro">Come, be part of the magic as we honour</p>
+        <p class="name-intro">We cordially invite you to celebrate</p>
         <div class="baby-name-wrapper">
           <h2 class="baby-name">Iman Seejae</h2>
         </div>
@@ -263,15 +275,15 @@
       <div class="skyline-signal-section">
         <svg class="sky-layer" viewBox="0 0 680 280" preserveAspectRatio="xMidYMax slice">
           <defs>
-            <!-- Beam gradient for left building -->
+            <!-- Beam gradient for left building - whitish -->
             <linearGradient id="beamL" x1="0" y1="1" x2="0.4" y2="0" gradientUnits="objectBoundingBox">
-              <stop offset="0%" stop-color="rgba(212,168,71,0.15)"/>
-              <stop offset="100%" stop-color="rgba(212,168,71,0)"/>
+              <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
             </linearGradient>
-            <!-- Beam gradient for right building -->
+            <!-- Beam gradient for right building - whitish -->
             <linearGradient id="beamR" x1="1" y1="1" x2="0.6" y2="0" gradientUnits="objectBoundingBox">
-              <stop offset="0%" stop-color="rgba(212,168,71,0.15)"/>
-              <stop offset="100%" stop-color="rgba(212,168,71,0)"/>
+              <stop offset="0%" stop-color="rgba(255,255,255,0.18)"/>
+              <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
             </linearGradient>
           </defs>
 
@@ -298,7 +310,7 @@
             <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3.5s" repeatCount="indefinite"/>
           </polygon>
           <!-- Wider atmospheric beam left -->
-          <polygon points="210,180 224,180 348,65 332,65" fill="rgba(212,168,71,0.04)" opacity="0.5">
+          <polygon points="210,180 224,180 348,65 332,65" fill="rgba(255,255,255,0.03)" opacity="0.5">
             <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3.5s" repeatCount="indefinite"/>
           </polygon>
 
@@ -307,7 +319,7 @@
             <animate attributeName="opacity" values="0.5;0.8;0.5" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
           </polygon>
           <!-- Wider atmospheric beam right -->
-          <polygon points="474,174 488,174 348,65 332,65" fill="rgba(212,168,71,0.04)" opacity="0.5">
+          <polygon points="474,174 488,174 348,65 332,65" fill="rgba(255,255,255,0.03)" opacity="0.5">
             <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
           </polygon>
 
@@ -326,8 +338,8 @@
           <rect x="200" y="172" width="26" height="108" rx="1" fill="#1a1a1a"/>
           <rect x="207" y="164" width="12" height="8" rx="1" fill="#1a1a1a"/>
           <!-- Spotlight light source on top -->
-          <ellipse cx="213" cy="174" rx="4" ry="2" fill="rgba(212,168,71,0.6)">
-            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite"/>
+          <ellipse cx="213" cy="174" rx="4" ry="2" fill="rgba(255,255,255,0.5)">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite"/>
           </ellipse>
 
           <rect x="234" y="204" width="28" height="76" rx="1" fill="#1a1a1a"/>
@@ -343,8 +355,8 @@
           <rect x="472" y="168" width="22" height="112" rx="1" fill="#1a1a1a"/>
           <rect x="478" y="160" width="10" height="8" rx="1" fill="#1a1a1a"/>
           <!-- Spotlight light source on top -->
-          <ellipse cx="483" cy="170" rx="4" ry="2" fill="rgba(212,168,71,0.6)">
-            <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+          <ellipse cx="483" cy="170" rx="4" ry="2" fill="rgba(255,255,255,0.5)">
+            <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
           </ellipse>
 
           <rect x="502" y="200" width="30" height="80" rx="1" fill="#1a1a1a"/>
@@ -375,7 +387,7 @@
           <rect class="bldg-light" x="444" y="212" width="2.5" height="2.5" rx="0.4" fill="rgba(212,168,71,0.4)" style="animation-duration:5.5s;animation-delay:1.3s;"/>
         </svg>
 
-        <!-- Signal cloud in sky -->
+        <!-- Signal cloud in sky - whitish -->
         <div class="signal-cloud-sky"></div>
         <div class="signal-ring-sky"></div>
 
@@ -393,11 +405,13 @@
           <div class="sky-ray" style="transform:rotate(240deg);animation-delay:0.9s;width:60px;"></div>
         </div>
 
-        <!-- Mini bat above the "1" -->
-        <div class="signal-bat-sky">
-          <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,124) scale(0.1,-0.1)" fill="rgb(212,168,71)" stroke="none"><path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/></g></svg>
+        <!-- Bat signal with "1" inside -->
+        <div class="signal-bat-container">
+          <div class="signal-bat-outline">
+            <svg viewBox="0 0 332 124" preserveAspectRatio="xMidYMid meet"><g transform="translate(0,124) scale(0.1,-0.1)" fill="rgba(255,255,255,0.6)" stroke="none"><path d="M212 1085 c37 -8 97 -28 135 -47 l68 -33 75 -75 75 -75 33 -69 c35 -72 62 -175 62 -239 l0 -38 48 8 c26 4 112 8 192 8 l145 -1 85 -22 c194 -52 386 -179 508 -336 l22 -29 22 29 c144 186 360 313 602 355 l70 12 130 -6 c72 -3 141 -9 154 -13 l22 -6 0 38 c1 253 213 501 463 543 l52 9 -512 1 -513 1 0 -41 0 -41 -27 -49 c-14 -27 -42 -61 -61 -75 -36 -28 -109 -54 -151 -54 -41 0 -101 20 -120 39 l-17 17 -20 85 -19 84 -5 -62 -5 -62 -15 9 c-8 5 -31 10 -50 10 -19 0 -42 -5 -50 -10 l-15 -9 -5 62 -5 62 -19 -84 -20 -85 -17 -17 c-19 -19 -79 -39 -120 -39 -42 0 -115 26 -151 54 -19 14 -47 48 -61 75 l-27 49 0 41 0 41 -512 -1 -513 -1 67 -13z"/></g></svg>
+          </div>
+          <div class="signal-one">1</div>
         </div>
-        <div class="signal-one">1</div>
         <span class="signal-turns-label">Turns One</span>
       </div>
 
@@ -409,19 +423,18 @@
             <p class="detail-label">When</p>
             <p class="detail-value">Saturday</p>
             <p class="detail-value">May 9, 2026</p>
-            <p class="detail-value-small">6:00 PM Onwards</p>
           </div>
           <div class="detail-item">
             <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
             <p class="detail-label">Where</p>
-            <p class="detail-value">Accord Chrome</p>
+            <a href="https://www.google.com/maps/search/Accord+Chrome+Chromepet+Chennai" target="_blank" rel="noopener" class="venue-name-link"><p class="detail-value">Accord Chrome</p></a>
             <p class="detail-value-small">Chromepet, Chennai</p>
             <a href="https://www.google.com/maps/search/Accord+Chrome+Chromepet+Chennai" target="_blank" rel="noopener" class="venue-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on Map</a>
           </div>
           <div class="detail-item detail-full">
             <div class="detail-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <p class="detail-label">Cake Cutting</p>
-            <p class="detail-value">7:00 PM</p>
+            <p class="detail-label">Timing</p>
+            <a href="#" id="add-to-calendar" class="time-event-link"><p class="detail-value">6:00 PM Onwards</p></a>
           </div>
         </div>
       </section>
@@ -460,6 +473,7 @@
 
   <script>
     (function() {
+      // Particles
       const c = document.getElementById('particles');
       for (let i = 0; i < 25; i++) {
         const p = document.createElement('div');
@@ -470,6 +484,41 @@
         const s = (2 + Math.random() * 3) + 'px';
         p.style.width = s; p.style.height = s;
         c.appendChild(p);
+      }
+
+      // Add to Calendar - generates .ics file for the event
+      const calBtn = document.getElementById('add-to-calendar');
+      if (calBtn) {
+        calBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          const icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//Iman Seejae Birthday//EN',
+            'BEGIN:VEVENT',
+            'DTSTART:20260509T123000Z',
+            'DTEND:20260509T163000Z',
+            'SUMMARY:Iman Seejae\'s 1st Birthday Celebration',
+            'DESCRIPTION:Batman-themed 1st birthday celebration. Dress code: Black & Gold.',
+            'LOCATION:Accord Chrome\, Chromepet\, Chennai',
+            'BEGIN:VALARM',
+            'TRIGGER:-PT60M',
+            'ACTION:DISPLAY',
+            'DESCRIPTION:Iman Seejae\'s Birthday in 1 hour!',
+            'END:VALARM',
+            'END:VEVENT',
+            'END:VCALENDAR'
+          ].join('\r\n');
+          const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'iman-seejae-birthday.ics';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
       }
     })();
   </script>
