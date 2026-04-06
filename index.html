@@ -228,10 +228,42 @@
       .signal-turns-label { top: 108px; }
       .signal-glow-sky { width: 130px; height: 70px; top: 22px; }
     }
+    /* Scroll hint indicator */
+    .scroll-hint {
+      position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+      z-index: 100; opacity: 1;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+    }
+    .scroll-hint.hidden { opacity: 0; }
+    .scroll-hint-inner {
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+    }
+    .scroll-hint-text {
+      font-family: var(--font-heading); font-size: 0.5rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: rgba(212,168,71,0.5);
+    }
+    .scroll-chevron {
+      width: 20px; height: 20px; color: rgba(212,168,71,0.5);
+      animation: bounce-down 1.8s ease-in-out infinite;
+    }
+    @keyframes bounce-down {
+      0%, 100% { transform: translateY(0); opacity: 0.5; }
+      50% { transform: translateY(6px); opacity: 1; }
+    }
+
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; } }
   </style>
 </head>
 <body>
+
+  <!-- Scroll hint -->
+  <div class="scroll-hint" id="scrollHint">
+    <div class="scroll-hint-inner">
+      <span class="scroll-hint-text">Scroll</span>
+      <svg class="scroll-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </div>
 
   <div class="bg-pattern"><svg viewBox="0 0 100 100" preserveAspectRatio="none"><defs><pattern id="diamonds" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="rgb(212,168,71)" stroke-width="0.3"/></pattern></defs><rect width="100" height="100" fill="url(#diamonds)"/></svg></div>
   <div class="particles" id="particles"></div>
@@ -497,6 +529,19 @@
         const s = (2 + Math.random() * 3) + 'px';
         p.style.width = s; p.style.height = s;
         c.appendChild(p);
+      }
+
+      // Scroll hint - hide after user scrolls
+      const scrollHint = document.getElementById('scrollHint');
+      if (scrollHint) {
+        let scrolled = false;
+        window.addEventListener('scroll', function() {
+          if (!scrolled && window.scrollY > 50) {
+            scrolled = true;
+            scrollHint.classList.add('hidden');
+            setTimeout(function() { scrollHint.style.display = 'none'; }, 500);
+          }
+        }, { passive: true });
       }
 
       // Add to Calendar - generates .ics file for the event
